@@ -1,0 +1,9 @@
+/* ---------- Configuración del negocio ---------- */
+const CONFIG = {
+  nombre:    'Kprichitos',
+  telefono:  '+53 56502201',
+  whatsapp:  '5356502201',
+  instagram: 'https://www.instagram.com/kprichito_oficial?stkn=Z2E1cGVvNW81Zjk5',
+  maps:      'https://www.google.com/maps/search/?api=1&query=Kprichitos',
+  direccion: 'Calle Libertad entre Maceo y H. Castillo 60B. Ciego de Ávila.'
+};
