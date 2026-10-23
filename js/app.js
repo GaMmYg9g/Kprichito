@@ -79,12 +79,6 @@ function renderPrecioHTML(precio, moneda) {
 
 /* =====================================================
    CÁLCULO DE PRECIOS (solo CUP)
-   -----------------------------------------------------
-   · precioCUP: obligatorio en cada producto.
-   · rebaja:
-       { tipo: 'porcentaje', valor: 15 }       → -15% CUP
-       { tipo: 'efectivo',   valor: 200 }      → -200 CUP
-       { cupFijo: 3000 }                       → fija CUP final
    ===================================================== */
 function calcularPrecios(prod) {
   const precioCUP = Math.round(Number(prod.precioCUP) || 0);
@@ -577,13 +571,6 @@ function checkoutCarrito() {
 
 /* =====================================================
    ORDEN + AGRUPACIÓN
-   -----------------------------------------------------
-   1. Ordena por `categoria` (alfabético, "otros" al final)
-      y dentro por nombre (alfabético).
-   2. Agrupa los productos con el mismo `productoMadre`
-      y los posiciona donde correspondería su primer hijo.
-   3. Los productos sin `productoMadre` van como tarjetas
-      individuales.
    ===================================================== */
 function prepararBloques(lista) {
   const conCat = lista.map(p => ({
@@ -1326,6 +1313,18 @@ function registrarSW() {
    INIT
    ===================================================== */
 document.addEventListener('DOMContentLoaded', () => {
+  
+  /* =====================================================
+     TEMA HALLOWEEN (Automático en Octubre)
+     ===================================================== */
+  const mesActual = new Date().getMonth(); // 0 = Enero, 9 = Octubre
+  if (mesActual === 9) {
+    const linkHalloween = document.createElement('link');
+    linkHalloween.rel = 'stylesheet';
+    linkHalloween.href = 'styles/halloween.css';
+    document.head.appendChild(linkHalloween);
+  }
+  
   const searchInput = $('#searchInput');
   const searchClear = $('#searchClear');
   const subNav = document.querySelector('.sub-nav');
