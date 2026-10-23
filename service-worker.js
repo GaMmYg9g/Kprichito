@@ -16,15 +16,16 @@ const PRECACHE = [
   './index.html',
   './manifest.json',
   './styles/styles.css',
+  './styles/halloween.css',
   './js/products.js',
   './js/juguetes.js',
   './js/regalos.js',
   './js/cumpleanos.js',
+  './js/escuela.js',
   './js/offers.js',
   './js/app.js',
   './icons/icon.svg',
 
-  /* Font Awesome vía CDN */
   'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css'
 ];
 
@@ -93,7 +94,7 @@ self.addEventListener('fetch', (event) => {
     return;
   }
 
-  /* ---------- 2) Assets estáticos (imágenes, fuentes, CDN) ---------- */
+  /* ---------- 2) Assets estáticos → CACHE-FIRST ---------- */
   if (esAssetEstatico) {
     event.respondWith(
       caches.match(request).then((cached) => {
