@@ -29,7 +29,6 @@ PRODUCTOS.cumpleanos = [
     nombre: 'Adornos de Pastel para Niña. Cintillo y Barita',
     categoria: 'decoracion',
     precioCUP: 4200,
-    rebaja: { tipo: 'porcentaje', valor: 10 },
     imagen: 'img/cumpleanos/adornosPastel.jpg',
     nuevo: true,
     agotado: false
@@ -48,7 +47,6 @@ PRODUCTOS.cumpleanos = [
     nombre: 'Banderín de Cumpleaños',
     categoria: 'banderines',
     precioCUP: 1600,
-    rebaja: { tipo: 'efectivo', valor: 1 },  // ⚠️ Antes era -$1 USD. Ajusta el valor en CUP.
     imagen: 'img/cumpleanos/banderin.jpg',
     nuevo: false,
     agotado: false
@@ -58,7 +56,6 @@ PRODUCTOS.cumpleanos = [
     nombre: 'Banner para Baby Showers',
     categoria: 'baby shower',
     precioCUP: 3000,
-    rebaja: { tipo: 'porcentaje', valor: 10 },
     imagen: 'img/cumpleanos/bannerBabySh.jpg',
     nuevo: true,
     agotado: false
@@ -76,67 +73,9 @@ PRODUCTOS.cumpleanos = [
     id: 'cum-007',
     nombre: 'Banderines de Feliz Cumpleaños',
     categoria: 'banderines',
-    precioCUP: 2500,
-    rebaja: { tipo: 'efectivo', valor: 1 },  // ⚠️ Ajustar en CUP
+    productoMadre: 'Banderínes',
+    precioCUP: 3500,
     imagen: 'img/cumpleanos/banderinHappyB.jpg',
-    nuevo: false,
-    agotado: false
-  },
-  {
-    id: 'cum-008',
-    nombre: 'Bolsa de Sorpresas de Capibara',
-    categoria: 'bolsas',
-    precioCUP: 800,
-    rebaja: { tipo: 'porcentaje', valor: 10 },
-    imagen: 'img/cumpleanos/bolsaCapibara.jpg',
-    nuevo: true,
-    agotado: false
-  },
-  {
-    id: 'cum-009',
-    nombre: 'Bolsas de Regalos para Cumpleaños',
-    categoria: 'bolsas',
-    precioCUP: 1500,
-    imagen: 'img/cumpleanos/bolsaGift.jpg',
-    nuevo: false,
-    agotado: false
-  },
-  {
-    id: 'cum-010',
-    nombre: 'Bolsitas de Regalos',
-    categoria: 'bolsas',
-    precioCUP: 1500,
-    rebaja: { tipo: 'efectivo', valor: 1 },  // ⚠️ Ajustar en CUP
-    imagen: 'img/cumpleanos/bolsaGift2.jpg',
-    nuevo: false,
-    agotado: false
-  },
-  {
-    id: 'cum-011',
-    nombre: 'Bolsa de Regalos de Dragon Ball',
-    categoria: 'bolsas',
-    precioCUP: 800,
-    rebaja: { tipo: 'porcentaje', valor: 10 },
-    imagen: 'img/cumpleanos/bolsaGoku.jpg',
-    nuevo: true,
-    agotado: false
-  },
-  {
-    id: 'cum-012',
-    nombre: 'Bolsa de Regalos de La Granja',
-    categoria: 'bolsas',
-    precioCUP: 800,
-    imagen: 'img/cumpleanos/bolsaGranja.jpg',
-    nuevo: false,
-    agotado: false
-  },
-  {
-    id: 'cum-013',
-    nombre: 'Bolsa de Regalos de Masha y el Oso',
-    categoria: 'bolsas',
-    precioCUP: 800,
-    rebaja: { tipo: 'efectivo', valor: 1 },  // ⚠️ Ajustar en CUP
-    imagen: 'img/cumpleanos/bolsaMasha.jpg',
     nuevo: false,
     agotado: false
   },
@@ -144,8 +83,7 @@ PRODUCTOS.cumpleanos = [
     id: 'cum-014',
     nombre: 'Calcomanías para Baby Showers',
     categoria: 'baby shower',
-    precioCUP: 10,                          // ⚠️ REVISAR — es muy bajo para CUP
-    rebaja: { tipo: 'porcentaje', valor: 10 },
+    precioCUP: 10,
     imagen: 'img/cumpleanos/calcomaniaBabySh.jpg',
     nuevo: true,
     agotado: false
@@ -164,7 +102,6 @@ PRODUCTOS.cumpleanos = [
     nombre: 'Cortinas de Colores para Cumpleaños',
     categoria: 'decoracion',
     precioCUP: 1600,
-    rebaja: { tipo: 'efectivo', valor: 1 },  // ⚠️ Ajustar en CUP
     imagen: 'img/cumpleanos/corfinas.jpg',
     nuevo: false,
     agotado: false
@@ -173,8 +110,7 @@ PRODUCTOS.cumpleanos = [
     id: 'cum-017',
     nombre: 'Globos para Baby Showers',
     categoria: 'baby shower',
-    precioCUP: 4,                           // ⚠️ REVISAR — es muy bajo para CUP
-    rebaja: { tipo: 'porcentaje', valor: 10 },
+    precioCUP: 4,
     imagen: 'img/cumpleanos/globosBabySh.jpg',
     nuevo: true,
     agotado: false
@@ -193,7 +129,6 @@ PRODUCTOS.cumpleanos = [
     nombre: 'Globos de Números. Dorados y Plateados',
     categoria: 'globos',
     precioCUP: 1000,
-    rebaja: { tipo: 'efectivo', valor: 1 },  // ⚠️ Ajustar en CUP
     imagen: 'img/cumpleanos/globosNum.jpg',
     nuevo: false,
     agotado: false
@@ -203,7 +138,6 @@ PRODUCTOS.cumpleanos = [
     nombre: 'Lazos para Baby Showers',
     categoria: 'baby shower',
     precioCUP: 1500,
-    rebaja: { tipo: 'porcentaje', valor: 10 },
     imagen: 'img/cumpleanos/lazosBabySh.jpg',
     nuevo: true,
     agotado: false
@@ -222,7 +156,6 @@ PRODUCTOS.cumpleanos = [
     nombre: 'Manteles para Cumpleaños',
     categoria: 'decoracion',
     precioCUP: 1500,
-    rebaja: { tipo: 'efectivo', valor: 1 },  // ⚠️ Ajustar en CUP
     imagen: 'img/cumpleanos/mantelesCumple.jpg',
     nuevo: false,
     agotado: false
@@ -232,36 +165,8 @@ PRODUCTOS.cumpleanos = [
     nombre: 'Moños para Baby Showers',
     categoria: 'baby shower',
     precioCUP: 1500,
-    rebaja: { tipo: 'porcentaje', valor: 10 },
     imagen: 'img/cumpleanos/monosBabySh.jpg',
     nuevo: true,
-    agotado: false
-  },
-  {
-    id: 'cum-024',
-    nombre: 'Piñata para Fiestas. Among Us',
-    categoria: 'pinatas',
-    precioCUP: 2500,
-    imagen: 'img/cumpleanos/pinataAmongUs.jpg',
-    nuevo: false,
-    agotado: false
-  },
-  {
-    id: 'cum-025',
-    nombre: 'Piñata para Fiestas. La Granja',
-    categoria: 'pinatas',
-    precioCUP: 2500,
-    imagen: 'img/cumpleanos/pinataGranja.jpg',
-    nuevo: false,
-    agotado: false
-  },
-  {
-    id: 'cum-026',
-    nombre: 'Piñata para Fiestas. Jurassic World',
-    categoria: 'pinatas',
-    precioCUP: 2500,
-    imagen: 'img/cumpleanos/pinataJurassicW.jpg',
-    nuevo: false,
     agotado: false
   },
   {
@@ -278,7 +183,6 @@ PRODUCTOS.cumpleanos = [
     nombre: 'Set de Cumpleaños del Real Madrid',
     categoria: 'sets',
     precioCUP: 7000,
-    rebaja: { tipo: 'efectivo', valor: 1 },  // ⚠️ Ajustar en CUP
     imagen: 'img/cumpleanos/setCumpleRM.jpg',
     nuevo: false,
     agotado: false
@@ -288,18 +192,7 @@ PRODUCTOS.cumpleanos = [
     nombre: 'Vasos de Cumpleaños',
     categoria: 'vasos',
     precioCUP: 2500,
-    rebaja: { tipo: 'porcentaje', valor: 10 },
     imagen: 'img/cumpleanos/vasosCumple.jpg',
-    nuevo: true,
-    agotado: false
-  },
-  {
-    id: 'cum-030',
-    nombre: 'Vasos de Cumpleaños',
-    categoria: 'vasos',
-    precioCUP: 1500,
-    rebaja: { tipo: 'porcentaje', valor: 10 },
-    imagen: 'img/cumpleanos/vasosCumple2.jpg',
     nuevo: true,
     agotado: false
   },
@@ -308,7 +201,6 @@ PRODUCTOS.cumpleanos = [
     nombre: 'Velas para Momentos Especiales',
     categoria: 'velas',
     precioCUP: 360,
-    rebaja: { tipo: 'efectivo', valor: 1 },  // ⚠️ Ajustar en CUP
     imagen: 'img/cumpleanos/velasEspeciales.jpg',
     nuevo: false,
     agotado: false
@@ -318,7 +210,6 @@ PRODUCTOS.cumpleanos = [
     nombre: 'Velas para Pastel',
     categoria: 'velas',
     precioCUP: 900,
-    rebaja: { tipo: 'efectivo', valor: 1 },  // ⚠️ Ajustar en CUP
     imagen: 'img/cumpleanos/velasKake.jpg',
     nuevo: false,
     agotado: false
@@ -328,7 +219,6 @@ PRODUCTOS.cumpleanos = [
     nombre: 'Velas de Número',
     categoria: 'velas',
     precioCUP: 900,
-    rebaja: { tipo: 'efectivo', valor: 1 },  // ⚠️ Ajustar en CUP
     imagen: 'img/cumpleanos/velasNum.jpg',
     nuevo: false,
     agotado: false
@@ -338,7 +228,6 @@ PRODUCTOS.cumpleanos = [
     nombre: 'Velas con Diseño para Cumpleaños',
     categoria: 'velas',
     precioCUP: 1600,
-    rebaja: { tipo: 'efectivo', valor: 1 },  // ⚠️ Ajustar en CUP
     imagen: 'img/cumpleanos/velasToys.jpg',
     nuevo: false,
     agotado: false
@@ -348,9 +237,28 @@ PRODUCTOS.cumpleanos = [
     nombre: 'Velas con Diseño para Cumpleaños',
     categoria: 'velas',
     precioCUP: 1600,
-    rebaja: { tipo: 'efectivo', valor: 1 },  // ⚠️ Ajustar en CUP
     imagen: 'img/cumpleanos/velasToysF.jpg',
     nuevo: false,
     agotado: false
-  }
+  },
+  {
+    id: 'cum-036',
+    nombre: 'Banderines de Feliz Cumpleaños',
+    categoria: 'banderines',
+    productoMadre: 'Banderínes',
+    precioCUP: 3500,
+    imagen: 'img/cumpleanos/banderinHappyBR.jpg',
+    nuevo: false,
+    agotado: false
+  },
+  {
+    id: 'cum-037',
+    nombre: 'Banderines de Feliz Cumpleaños',
+    categoria: 'banderines',
+    productoMadre: 'Banderínes',
+    precioCUP: 3500,
+    imagen: 'img/cumpleanos/banderinHappyBM.jpg',
+    nuevo: false,
+    agotado: false
+  },
 ];
