@@ -53,10 +53,11 @@ PRODUCTOS.regalos = [
   },
   {
     id: 'reg-005',
-    nombre: 'Perfumes de Hombre y de Mujer',
+    nombre: 'Perfume y Crema Chevalier',
     categoria: 'belleza',
-    precioCUP: 4,                            // ⚠️ REVISAR — era 4 USD (≈ 2800 CUP)
-    imagen: 'img/regalos/perfumes.jpg',
+    productoMadre: 'Perfumes',
+    precioCUP: 6500,
+    imagen: 'img/regalos/perfChev.jpg',
     nuevo: false,
     agotado: false
   },
@@ -98,10 +99,10 @@ PRODUCTOS.regalos = [
   },
   {
     id: 'reg-010',
-    nombre: 'Ropa y Mantas para Bebé',
-    categoria: 'bebes',
-    precioCUP: 1,                            // ⚠️ REVISAR — es muy bajo
-    imagen: 'img/regalos/ropaMantaBebe.jpg',
+    nombre: 'Ropa para Bebé',
+    categoria: 'ropa',
+    precioCUP: 4450,                            
+    imagen: 'img/regalos/monoVerdA.jpg',
     nuevo: false,
     agotado: false
   },
@@ -116,29 +117,22 @@ PRODUCTOS.regalos = [
   },
   {
     id: 'reg-012',
-    nombre: 'Vasos Plásticos para Bebé',
-    categoria: 'hogar',
-    precioCUP: 1500,
-    imagen: 'img/regalos/termosAgua.jpg',
+    nombre: 'Perfume VIP Men',
+    categoria: 'belleza',
+    productoMadre: 'Perfumes',
+    precioCUP: 7000,
+    imagen: 'img/regalos/perfVMen.jpg',
     nuevo: false,
     agotado: false
   },
   {
-    id: 'reg-013',
-    nombre: 'Velas Aromáticas',
-    categoria: 'hogar',
-    precioCUP: 600,
-    imagen: 'img/regalos/velasAromaticas.jpg',
+    id: 'reg-005',
+    nombre: 'Perfumes y Crema Chevalier',
+    categoria: 'belleza',
+    productoMadre: 'Perfumes',
+    precioCUP: 6500,
+    imagen: 'img/regalos/perfumes.jpg',
     nuevo: false,
     agotado: false
   },
-  {
-    id: 'reg-014',
-    nombre: 'Portaminas con Diseños',
-    categoria: 'regalo',
-    precioCUP: 500,
-    imagen: 'img/regalos/portaminas.jpg',
-    nuevo: false,
-    agotado: false
-  }
 ];
