@@ -1,15 +1,3 @@
-/* =====================================================
-   KPRICHITOS · Ofertas
-   -----------------------------------------------------
-   Cada oferta es un PAR:
-     - cara   : producto caro (izquierda)
-     - barata : producto barato (derecha)
-   Se muestran siempre de dos en dos.
-
-   IMPORTANTE: Las ofertas SIEMPRE son en USD.
-   No tienen selector de moneda.
-   ===================================================== */
-
 const OFERTAS = [
   {
     id: 'par-001',
