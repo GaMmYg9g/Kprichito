@@ -16,40 +16,19 @@
 
 PRODUCTOS.juguetes = [
   {
-    id: 'jug-001',
-    nombre: 'Camión Mezcladora Realista',
-    categoria: 'vehiculos',
-    precioCUP: 18000,
-    rebaja: { tipo: 'porcentaje', valor: 15 },
-    imagen: 'img/juguetes/truck.jpg',
-    nuevo: false,
-    agotado: false
-  },
-  {
     id: 'jug-002',
     nombre: 'Set de Tren de Avengers',
     categoria: 'vehiculos',
     precioCUP: 4000,
-    rebaja: { tipo: 'efectivo', valor: 2 },  // ⚠️ Ajustar en CUP
     imagen: 'img/juguetes/trainAvenger.jpg',
     nuevo: false,
     agotado: true
-  },
-  {
-    id: 'jug-003',
-    nombre: 'Mochila de Toad',
-    categoria: 'mochilas',
-    precioCUP: 5000,
-    imagen: 'img/juguetes/toadBag.jpg',
-    nuevo: false,
-    agotado: false
   },
   {
     id: 'jug-004',
     nombre: 'Set de Figuras de Acción de Super Héroes',
     categoria: 'figuras',
     precioCUP: 5000,
-    rebaja: { tipo: 'porcentaje', valor: 15 },
     imagen: 'img/juguetes/setSuperHero.jpg',
     nuevo: false,
     agotado: false
@@ -59,17 +38,7 @@ PRODUCTOS.juguetes = [
     nombre: 'Set de Maquillaje para Niñas',
     categoria: 'sets',
     precioCUP: 1600,
-    rebaja: { tipo: 'efectivo', valor: 2 },  // ⚠️ Ajustar en CUP
     imagen: 'img/juguetes/setMaquillaje.jpg',
-    nuevo: false,
-    agotado: false
-  },
-  {
-    id: 'jug-006',
-    nombre: 'Set de Bloques y Figuras',
-    categoria: 'bloques',
-    precioCUP: 880,
-    imagen: 'img/juguetes/setBloquesFiguras.jpg',
     nuevo: false,
     agotado: false
   },
@@ -78,7 +47,6 @@ PRODUCTOS.juguetes = [
     nombre: 'Set de Figuras de Avenger',
     categoria: 'figuras',
     precioCUP: 4000,
-    rebaja: { tipo: 'porcentaje', valor: 15 },
     imagen: 'img/juguetes/setAvenger.jpg',
     nuevo: false,
     agotado: false
@@ -89,7 +57,6 @@ PRODUCTOS.juguetes = [
     categoria: 'peluches',
     productoMadre: 'Peluches',
     precioCUP: 5000,
-    rebaja: { tipo: 'efectivo', valor: 2 },  // ⚠️ Ajustar en CUP
     imagen: 'img/juguetes/perritoPeluche.jpg',
     nuevo: false,
     agotado: false
@@ -105,23 +72,11 @@ PRODUCTOS.juguetes = [
     agotado: false
   },
   {
-    id: 'jug-010',
-    nombre: 'Osito de Peluche',
-    categoria: 'peluches',
-    productoMadre: 'Peluches',
-    precioCUP: 10000,
-    rebaja: { tipo: 'porcentaje', valor: 15 },
-    imagen: 'img/juguetes/osoPelucheN.jpg',
-    nuevo: false,
-    agotado: false
-  },
-  {
     id: 'jug-011',
     nombre: 'Peluche de Mickey Mouse',
     categoria: 'peluches',
     productoMadre: 'Peluches',
     precioCUP: 12000,
-    rebaja: { tipo: 'efectivo', valor: 2 },  // ⚠️ Ajustar en CUP
     imagen: 'img/juguetes/mickey.jpg',
     nuevo: false,
     agotado: false
@@ -130,7 +85,7 @@ PRODUCTOS.juguetes = [
     id: 'jug-012',
     nombre: 'Llaveros y Monederos se Stitch',
     categoria: 'llaveros',
-    precioCUP: 1,                            // ⚠️ REVISAR — es muy bajo
+    precioCUP: 1,
     imagen: 'img/juguetes/llaveroMonederoStitch.jpg',
     nuevo: false,
     agotado: false
@@ -141,7 +96,6 @@ PRODUCTOS.juguetes = [
     categoria: 'vehiculos',
     productoMadre: 'Control Remoto',
     precioCUP: 19000,
-    rebaja: { tipo: 'porcentaje', valor: 15 },
     imagen: 'img/juguetes/jeepSpider.jpg',
     nuevo: false,
     agotado: false
@@ -152,7 +106,6 @@ PRODUCTOS.juguetes = [
     categoria: 'vehiculos',
     productoMadre: 'Control Remoto',
     precioCUP: 19000,
-    rebaja: { tipo: 'efectivo', valor: 2 },  // ⚠️ Ajustar en CUP
     imagen: 'img/juguetes/jeepHulk.jpg',
     nuevo: false,
     agotado: false
@@ -173,7 +126,6 @@ PRODUCTOS.juguetes = [
     categoria: 'vehiculos',
     productoMadre: 'Control Remoto',
     precioCUP: 19000,
-    rebaja: { tipo: 'porcentaje', valor: 15 },
     imagen: 'img/juguetes/jeepCap.jpg',
     nuevo: false,
     agotado: false
@@ -183,7 +135,6 @@ PRODUCTOS.juguetes = [
     nombre: 'Donut Shop. Set de Dulces de Juguete',
     categoria: 'sets',
     precioCUP: 3000,
-    rebaja: { tipo: 'efectivo', valor: 2 },  // ⚠️ Ajustar en CUP
     imagen: 'img/juguetes/donutShop.jpg',
     nuevo: false,
     agotado: false
@@ -204,18 +155,7 @@ PRODUCTOS.juguetes = [
     categoria: 'peluches',
     productoMadre: 'Peluches',
     precioCUP: 8000,
-    rebaja: { tipo: 'porcentaje', valor: 15 },
     imagen: 'img/juguetes/monoPeluche.jpg',
-    nuevo: false,
-    agotado: false
-  },
-  {
-    id: 'jug-020',
-    nombre: 'Marcadores de Colores',
-    categoria: 'didacticos',
-    precioCUP: 2500,
-    rebaja: { tipo: 'efectivo', valor: 2 },  // ⚠️ Ajustar en CUP
-    imagen: 'img/juguetes/marcadores.jpg',
     nuevo: false,
     agotado: false
   },
@@ -233,7 +173,6 @@ PRODUCTOS.juguetes = [
     nombre: 'Set de Piezas de Lego',
     categoria: 'bloques',
     precioCUP: 4000,
-    rebaja: { tipo: 'porcentaje', valor: 15 },
     imagen: 'img/juguetes/legos.jpg',
     nuevo: false,
     agotado: false
@@ -243,7 +182,6 @@ PRODUCTOS.juguetes = [
     nombre: 'Helicopterós de Juguete',
     categoria: 'vehiculos',
     precioCUP: 3000,
-    rebaja: { tipo: 'efectivo', valor: 2 },  // ⚠️ Ajustar en CUP
     imagen: 'img/juguetes/helicopteros.jpg',
     nuevo: false,
     agotado: false
@@ -254,25 +192,6 @@ PRODUCTOS.juguetes = [
     categoria: 'didacticos',
     precioCUP: 3000,
     imagen: 'img/juguetes/relojes.jpg',
-    nuevo: false,
-    agotado: false
-  },
-  {
-    id: 'jug-025',
-    nombre: 'Luna de Peluche',
-    categoria: 'peluches',
-    productoMadre: 'Peluches',
-    precioCUP: 6,                            // ⚠️ REVISAR — es muy bajo
-    imagen: 'img/juguetes/lunaPeluche.jpg',
-    nuevo: false,
-    agotado: false
-  },
-  {
-    id: 'jug-026',
-    nombre: 'Set de Herramientas de Construcción',
-    categoria: 'sets',
-    precioCUP: 2000,
-    imagen: 'img/juguetes/herramientas.jpg',
     nuevo: false,
     agotado: false
   },
@@ -306,16 +225,6 @@ PRODUCTOS.juguetes = [
     agotado: false
   },
   {
-    id: 'jug-030',
-    nombre: 'Osito de Peluche Rosa',
-    categoria: 'peluches',
-    productoMadre: 'Peluches',
-    precioCUP: 3000,
-    imagen: 'img/juguetes/osoPelucheRosa.jpg',
-    nuevo: false,
-    agotado: false
-  },
-  {
     id: 'jug-031',
     nombre: 'Osito de Peluche',
     categoria: 'peluches',
@@ -336,26 +245,6 @@ PRODUCTOS.juguetes = [
     agotado: false
   },
   {
-    id: 'jug-033',
-    nombre: 'Pulpo de Peluche',
-    categoria: 'peluches',
-    productoMadre: 'Peluches',
-    precioCUP: 1,                            // ⚠️ REVISAR — es muy bajo
-    imagen: 'img/juguetes/pulpoPeluche.jpg',
-    nuevo: false,
-    agotado: false
-  },
-  {
-    id: 'jug-034',
-    nombre: 'Elefante de Peluche',
-    categoria: 'peluches',
-    productoMadre: 'Peluches',
-    precioCUP: 1,                            // ⚠️ REVISAR — es muy bajo
-    imagen: 'img/juguetes/elefantePeluche.jpg',
-    nuevo: false,
-    agotado: false
-  },
-  {
     id: 'jug-035',
     nombre: 'Patines para Niños',
     categoria: 'ruedas',
@@ -366,29 +255,11 @@ PRODUCTOS.juguetes = [
     agotado: false
   },
   {
-    id: 'jug-036',
-    nombre: 'Set de Cocina',
-    categoria: 'sets',
-    precioCUP: 3500,
-    imagen: 'img/juguetes/setCocina.jpg',
-    nuevo: false,
-    agotado: false
-  },
-  {
     id: 'jug-037',
     nombre: 'Set de Figuras de Acción',
     categoria: 'sets',
     precioCUP: 4000,
     imagen: 'img/juguetes/heroesGo.jpg',
-    nuevo: false,
-    agotado: false
-  },
-  {
-    id: 'jug-038',
-    nombre: 'Caja de Crayones de 12 Colores',
-    categoria: 'didacticos',                 // ⚠️ Antes decía 'peluches' — lo cambié
-    precioCUP: 1500,
-    imagen: 'img/juguetes/crayones.jpg',
     nuevo: false,
     agotado: false
   },
@@ -421,30 +292,12 @@ PRODUCTOS.juguetes = [
     agotado: false
   },
   {
-    id: 'jug-042',
-    nombre: 'Flotadores Coloridos con Diseños',
-    categoria: 'sets',
-    precioCUP: 5000,
-    imagen: 'img/juguetes/flotadores.jpg',
-    nuevo: false,
-    agotado: false
-  },
-    {
     id: 'jug-043',
     nombre: 'Andador',
     categoria: 'didacticos',
     productoMadre: 'Ruedas',
     precioCUP: 20000,
     imagen: 'img/juguetes/andador.jpg',
-    nuevo: false,
-    agotado: false
-  },
-  {
-    id: 'jug-044',
-    nombre: 'Aviones',
-    categoria: 'juguetes',
-    precioCUP: 1500,
-    imagen: 'img/juguetes/aviones.jpg',
     nuevo: false,
     agotado: false
   },
@@ -616,16 +469,6 @@ PRODUCTOS.juguetes = [
     agotado: false
   },
   {
-    id: 'jug-062',
-    nombre: 'Rompecabezas',
-    categoria: 'didactico',
-    productoMadre: 'Juegos de Mesa',
-    precioCUP: 1500,
-    imagen: 'img/juguetes/rompecab.jpg',
-    nuevo: false,
-    agotado: false
-  },
-  {
     id: 'jug-063',
     nombre: 'Set Médico de Juguete',
     categoria: 'sets',
@@ -635,29 +478,11 @@ PRODUCTOS.juguetes = [
     agotado: false
   },
   {
-    id: 'jug-064',
-    nombre: 'Set de Bomberos',
-    categoria: 'sets',
-    precioCUP: 2000,
-    imagen: 'img/juguetes/setBombero.jpg',
-    nuevo: false,
-    agotado: false
-  },
-  {
     id: 'jug-065',
     nombre: 'Set de Bomberos',
     categoria: 'sets',
     precioCUP: 3500,
     imagen: 'img/juguetes/setBombero2.jpg',
-    nuevo: false,
-    agotado: false
-  },
-  {
-    id: 'jug-066',
-    nombre: 'Set de Doctor',
-    categoria: 'sets',
-    precioCUP: 3500,
-    imagen: 'img/juguetes/setDoctor.jpg',
     nuevo: false,
     agotado: false
   },
@@ -676,42 +501,6 @@ PRODUCTOS.juguetes = [
     categoria: 'sets',
     precioCUP: 7800,
     imagen: 'img/juguetes/setCocina4.jpg',
-    nuevo: false,
-    agotado: false
-  },
-  {
-    id: 'jug-069',
-    nombre: 'Set Mágico',
-    categoria: 'sets',
-    precioCUP: 3500,
-    imagen: 'img/juguetes/setMagico.jpg',
-    nuevo: false,
-    agotado: false
-  },
-  {
-    id: 'jug-070',
-    nombre: 'Scuichis',
-    categoria: 'scuichis',
-    precioCUP: 3000,
-    imagen: 'img/juguetes/scuichis.jpg',
-    nuevo: false,
-    agotado: false
-  },
-  {
-    id: 'jug-084',
-    nombre: 'Scuichis',
-    categoria: 'scuichis',
-    precioCUP: 3000,
-    imagen: 'img/juguetes/scuichis.jpg',
-    nuevo: false,
-    agotado: false
-  },
-  {
-    id: 'jug-071',
-    nombre: 'Set de Cocina',
-    categoria: 'sets',
-    precioCUP: 3500,
-    imagen: 'img/juguetes/setCocina3.jpg',
     nuevo: false,
     agotado: false
   },
@@ -802,26 +591,6 @@ PRODUCTOS.juguetes = [
     agotado: false
   },
   {
-    id: 'jug-081',
-    nombre: 'Guerreras del K-Pop',
-    categoria: 'muñecas',
-    productoMadre: 'Muñecas',
-    precioCUP: 4900,
-    imagen: 'img/juguetes/munecasFash4.jpg',
-    nuevo: false,
-    agotado: false
-  },
-  {
-    id: 'jug-082',
-    nombre: 'Guerreras del K-Pop',
-    categoria: 'muñecas',
-    productoMadre: 'Muñecas',
-    precioCUP: 4900,
-    imagen: 'img/juguetes/munecasFash3.jpg',
-    nuevo: false,
-    agotado: false
-  },
-  {
     id: 'jug-083',
     nombre: 'Muñecas',
     categoria: 'muñecas',
@@ -830,5 +599,5 @@ PRODUCTOS.juguetes = [
     imagen: 'img/juguetes/munecas5.jpg',
     nuevo: false,
     agotado: false
-  },
+  }
 ];
