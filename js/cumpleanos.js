@@ -383,4 +383,44 @@ PRODUCTOS.cumpleanos = [
     nuevo: false,
     agotado: false
   },
+  {
+    id: 'cum-050',
+    nombre: 'Adornos para Pastel',
+    categoria: 'decoracion',
+    productoMadre: 'Adornos para Pastel',
+    precioCUP: 1000,
+    imagen: 'img/cumpleanos/adornoPastel1.jpg',
+    nuevo: false,
+    agotado: false
+  },
+  {
+    id: 'cum-051',
+    nombre: 'Adornos para Pastel',
+    categoria: 'decoracion',
+    productoMadre: 'Adornos para Pastel',
+    precioCUP: 1000,
+    imagen: 'img/cumpleanos/adornoPastel2.jpg',
+    nuevo: false,
+    agotado: false
+  },
+  {
+    id: 'cum-052',
+    nombre: 'Adornos para Pastel',
+    categoria: 'decoracion',
+    productoMadre: 'Adornos para Pastel',
+    precioCUP: 1000,
+    imagen: 'img/cumpleanos/adornoPastel3.jpg',
+    nuevo: false,
+    agotado: false
+  },
+  {
+    id: 'cum-053',
+    nombre: 'Adornos para Pastel',
+    categoria: 'decoracion',
+    productoMadre: 'Adornos para Pastel',
+    precioCUP: 1000,
+    imagen: 'img/cumpleanos/adornoPastel4.jpg',
+    nuevo: false,
+    agotado: false
+  },
 ];
