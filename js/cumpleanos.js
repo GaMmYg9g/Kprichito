@@ -61,7 +61,7 @@ PRODUCTOS.cumpleanos = [
     categoria: 'banderines',
     productoMadre: 'Banderínes',
     precioCUP: 3500,
-    imagen: 'img/cumpleanos/banderinHappyB.jpg',
+    imagen: 'img/cumpleanos/banderinHappyBA.jpg',
     nuevo: false,
     agotado: false
   },
