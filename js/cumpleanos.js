@@ -342,7 +342,7 @@ PRODUCTOS.cumpleanos = [
     agotado: false
   },
   {
-    id: 'cum-045',
+    id: 'cum-046',
     nombre: 'Set de Cumpleaños de Las Mini Guerreras del K-Pop',
     categoria: 'sets',
     productoMadre: 'Set de Cumpleaños',
@@ -352,7 +352,7 @@ PRODUCTOS.cumpleanos = [
     agotado: false
   },
   {
-    id: 'cum-046',
+    id: 'cum-047',
     nombre: 'Set de Cumpleaños de Las Guerreras del K-Pop',
     categoria: 'sets',
     productoMadre: 'Set de Cumpleaños',
@@ -362,12 +362,21 @@ PRODUCTOS.cumpleanos = [
     agotado: false
   },
   {
-    id: 'cum-044',
+    id: 'cum-048',
     nombre: 'Set de Cumpleaños de Ladybug',
     categoria: 'sets',
     productoMadre: 'Set de Cumpleaños',
     precioCUP: 10000,
     imagen: 'img/cumpleanos/setCumpleLadyB.jpg',
+    nuevo: false,
+    agotado: false
+  },
+  {
+    id: 'cum-049',
+    nombre: 'Adornos para Pastel',
+    categoria: 'sets',
+    precioCUP: 1000,
+    imagen: 'img/cumpleanos/adornoPastel.jpg',
     nuevo: false,
     agotado: false
   },
