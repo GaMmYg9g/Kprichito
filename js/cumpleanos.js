@@ -1,19 +1,3 @@
-/* =====================================================
-   KPRICHITOS · Artículos de Cumpleaños
-   -----------------------------------------------------
-   Agrega o edita productos aquí. Cada producto debe
-   estar separado por coma. No olvides la coma después
-   del último campo de cada objeto excepto el último.
-
-   Campo `categoria` (opcional):
-     · Solo para agrupar visualmente. No se muestra.
-     · Si lo omites, el producto cae en "Otros".
-
-   Campo `productoMadre` (opcional):
-     · Agrupa varios productos en un carrusel horizontal
-       con divisor. Ej: productoMadre: 'Globos'.
-   ===================================================== */
-
 PRODUCTOS.cumpleanos = [
   {
     id: 'cum-001',
@@ -46,7 +30,6 @@ PRODUCTOS.cumpleanos = [
     id: 'cum-004',
     nombre: 'Banderín de Cumpleaños',
     categoria: 'banderines',
-    productoMadre: 'Banderines',
     precioCUP: 1600,
     imagen: 'img/cumpleanos/banderin.jpg',
     nuevo: false,
@@ -74,7 +57,7 @@ PRODUCTOS.cumpleanos = [
     id: 'cum-007',
     nombre: 'Banderines de Feliz Cumpleaños',
     categoria: 'banderines',
-    productoMadre: 'Banderines',
+    productoMadre: 'Banderínes',
     precioCUP: 3500,
     imagen: 'img/cumpleanos/banderinHappyB.jpg',
     nuevo: false,
@@ -183,7 +166,8 @@ PRODUCTOS.cumpleanos = [
     id: 'cum-028',
     nombre: 'Set de Cumpleaños del Real Madrid',
     categoria: 'sets',
-    precioCUP: 7000,
+    productoMadre: 'Set de Cumpleaños',
+    precioCUP: 10000,
     imagen: 'img/cumpleanos/setCumpleRM.jpg',
     nuevo: false,
     agotado: false
@@ -201,6 +185,7 @@ PRODUCTOS.cumpleanos = [
     id: 'cum-031',
     nombre: 'Velas para Momentos Especiales',
     categoria: 'velas',
+    productoMadre: 'Velas',
     precioCUP: 360,
     imagen: 'img/cumpleanos/velasEspeciales.jpg',
     nuevo: false,
@@ -210,6 +195,7 @@ PRODUCTOS.cumpleanos = [
     id: 'cum-032',
     nombre: 'Velas para Pastel',
     categoria: 'velas',
+    productoMadre: 'Velas',
     precioCUP: 900,
     imagen: 'img/cumpleanos/velasKake.jpg',
     nuevo: false,
@@ -219,6 +205,7 @@ PRODUCTOS.cumpleanos = [
     id: 'cum-033',
     nombre: 'Velas de Número',
     categoria: 'velas',
+    productoMadre: 'Velas',
     precioCUP: 900,
     imagen: 'img/cumpleanos/velasNum.jpg',
     nuevo: false,
@@ -228,15 +215,17 @@ PRODUCTOS.cumpleanos = [
     id: 'cum-034',
     nombre: 'Velas con Diseño para Cumpleaños',
     categoria: 'velas',
+    productoMadre: 'Velas con Diseño',
     precioCUP: 1600,
     imagen: 'img/cumpleanos/velasToys.jpg',
     nuevo: false,
-    agotado: false
+    agotado: true
   },
   {
     id: 'cum-035',
     nombre: 'Velas con Diseño para Cumpleaños',
     categoria: 'velas',
+    productoMadre: 'Velas con Diseño',
     precioCUP: 1600,
     imagen: 'img/cumpleanos/velasToysF.jpg',
     nuevo: false,
@@ -246,7 +235,7 @@ PRODUCTOS.cumpleanos = [
     id: 'cum-036',
     nombre: 'Banderines de Feliz Cumpleaños',
     categoria: 'banderines',
-    productoMadre: 'Banderines',
+    productoMadre: 'Banderínes',
     precioCUP: 3500,
     imagen: 'img/cumpleanos/banderinHappyBR.jpg',
     nuevo: false,
@@ -256,9 +245,129 @@ PRODUCTOS.cumpleanos = [
     id: 'cum-037',
     nombre: 'Banderines de Feliz Cumpleaños',
     categoria: 'banderines',
-    productoMadre: 'Banderines',
+    productoMadre: 'Banderínes',
     precioCUP: 3500,
     imagen: 'img/cumpleanos/banderinHappyBM.jpg',
+    nuevo: false,
+    agotado: false
+  },
+  {
+    id: 'cum-038',
+    nombre: 'Mantel',
+    categoria: 'manteles',
+    productoMadre: 'Manteles',
+    precioCUP: 3500,
+    imagen: 'img/cumpleanos/mantelR.jpg',
+    nuevo: false,
+    agotado: false
+  },
+  {
+    id: 'cum-039',
+    nombre: 'Mantel',
+    categoria: 'manteles',
+    productoMadre: 'Manteles',
+    precioCUP: 3500,
+    imagen: 'img/cumpleanos/mantelN.jpg',
+    nuevo: false,
+    agotado: false
+  },
+  {
+    id: 'cum-040',
+    nombre: 'Mantel',
+    categoria: 'manteles',
+    productoMadre: 'Manteles',
+    precioCUP: 3500,
+    imagen: 'img/cumpleanos/mantelAm.jpg',
+    nuevo: false,
+    agotado: false
+  },
+  {
+    id: 'cum-041',
+    nombre: 'Mantel',
+    categoria: 'manteles',
+    productoMadre: 'Manteles',
+    precioCUP: 3500,
+    imagen: 'img/cumpleanos/mantelA.jpg',
+    nuevo: false,
+    agotado: false
+  },
+  {
+    id: 'cum-042',
+    nombre: 'Mantel',
+    categoria: 'manteles',
+    productoMadre: 'Manteles',
+    precioCUP: 3500,
+    imagen: 'img/cumpleanos/mantelM.jpg',
+    nuevo: false,
+    agotado: false
+  },
+  {
+    id: 'cum-043',
+    nombre: 'Mantel',
+    categoria: 'manteles',
+    productoMadre: 'Manteles',
+    precioCUP: 3500,
+    imagen: 'img/cumpleanos/mantelG.jpg',
+    nuevo: false,
+    agotado: false
+  },
+  {
+    id: 'cum-043',
+    nombre: 'Mantel',
+    categoria: 'manteles',
+    productoMadre: 'Manteles',
+    precioCUP: 3500,
+    imagen: 'img/cumpleanos/mantelV.jpg',
+    nuevo: false,
+    agotado: false
+  },
+  {
+    id: 'cum-044',
+    nombre: 'Set de Cumpleaños de Pocoyo',
+    categoria: 'sets',
+    productoMadre: 'Set de Cumpleaños',
+    precioCUP: 10000,
+    imagen: 'img/cumpleanos/setCumplePocoYo.jpg',
+    nuevo: false,
+    agotado: false
+  },
+  {
+    id: 'cum-045',
+    nombre: 'Set de Cumpleaños de La Vaca Lola',
+    categoria: 'sets',
+    productoMadre: 'Set de Cumpleaños',
+    precioCUP: 10000,
+    imagen: 'img/cumpleanos/setCumpleVLola.jpg',
+    nuevo: false,
+    agotado: false
+  },
+  {
+    id: 'cum-045',
+    nombre: 'Set de Cumpleaños de Las Mini Guerreras del K-Pop',
+    categoria: 'sets',
+    productoMadre: 'Set de Cumpleaños',
+    precioCUP: 10000,
+    imagen: 'img/cumpleanos/setCumpleGKPop.jpg',
+    nuevo: false,
+    agotado: false
+  },
+  {
+    id: 'cum-046',
+    nombre: 'Set de Cumpleaños de Las Guerreras del K-Pop',
+    categoria: 'sets',
+    productoMadre: 'Set de Cumpleaños',
+    precioCUP: 10000,
+    imagen: 'img/cumpleanos/setCumpleKPop.jpg',
+    nuevo: false,
+    agotado: false
+  },
+  {
+    id: 'cum-044',
+    nombre: 'Set de Cumpleaños de Ladybug',
+    categoria: 'sets',
+    productoMadre: 'Set de Cumpleaños',
+    precioCUP: 10000,
+    imagen: 'img/cumpleanos/setCumpleLadyB.jpg',
     nuevo: false,
     agotado: false
   },
