@@ -1,3 +1,19 @@
+/* =====================================================
+   KPRICHITOS · Regalos
+   -----------------------------------------------------
+   Agrega o edita productos aquí. Cada producto debe
+   estar separado por coma. No olvides la coma después
+   del último campo de cada objeto excepto el último.
+
+   Campo `categoria` (opcional):
+     · Solo para agrupar visualmente. No se muestra.
+     · Si lo omites, el producto cae en "Otros".
+
+   Campo `productoMadre` (opcional):
+     · Agrupa varios productos en un carrusel horizontal
+       con divisor. Ej: productoMadre: 'Cestas'.
+   ===================================================== */
+
 PRODUCTOS.regalos = [
   {
     id: 'reg-001',
@@ -85,6 +101,7 @@ PRODUCTOS.regalos = [
     id: 'reg-010',
     nombre: 'Ropa para Bebé',
     categoria: 'ropa',
+    productoMadre: 'Ropa',
     precioCUP: 4450,                            
     imagen: 'img/regalos/monoVerdA.jpg',
     nuevo: false,
@@ -106,6 +123,26 @@ PRODUCTOS.regalos = [
     productoMadre: 'Perfumes',
     precioCUP: 7000,
     imagen: 'img/regalos/perfVMen.jpg',
+    nuevo: false,
+    agotado: false
+  },
+  {
+    id: 'reg-013',
+    nombre: 'Perfumes y Crema',
+    categoria: 'belleza',
+    productoMadre: 'Perfumes',
+    precioCUP: 6500,
+    imagen: 'img/regalos/perfCrem.jpg',
+    nuevo: false,
+    agotado: false
+  },
+  {
+    id: 'reg-014',
+    nombre: 'Saturdey Night VIP',
+    categoria: 'belleza',
+    productoMadre: 'Perfumes',
+    precioCUP: 6000,
+    imagen: 'img/regalos/perfVIP2.jpg',
     nuevo: false,
     agotado: false
   },
