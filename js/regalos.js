@@ -1,19 +1,3 @@
-/* =====================================================
-   KPRICHITOS · Regalos
-   -----------------------------------------------------
-   Agrega o edita productos aquí. Cada producto debe
-   estar separado por coma. No olvides la coma después
-   del último campo de cada objeto excepto el último.
-
-   Campo `categoria` (opcional):
-     · Solo para agrupar visualmente. No se muestra.
-     · Si lo omites, el producto cae en "Otros".
-
-   Campo `productoMadre` (opcional):
-     · Agrupa varios productos en un carrusel horizontal
-       con divisor. Ej: productoMadre: 'Cestas'.
-   ===================================================== */
-
 PRODUCTOS.regalos = [
   {
     id: 'reg-001',
@@ -21,7 +5,7 @@ PRODUCTOS.regalos = [
     categoria: 'belleza',
     precioCUP: 3700,
     imagen: 'img/regalos/brochasMaquillaje.jpg',
-    nuevo: true,
+    nuevo: false,
     agotado: false
   },
   {
