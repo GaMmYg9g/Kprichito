@@ -1,8 +1,9 @@
 PRODUCTOS.cumpleanos = [
   {
     id: 'cum-001',
-    nombre: 'Adornos para el Kake',
+    nombre: 'Adornos para Pastel',
     categoria: 'decoracion',
+    productoMadre: 'Adornos para Pastel',
     precioCUP: 1000,
     imagen: 'img/cumpleanos/adornoKake.jpg',
     nuevo: false,
@@ -10,11 +11,12 @@ PRODUCTOS.cumpleanos = [
   },
   {
     id: 'cum-002',
-    nombre: 'Adornos de Pastel para Niña. Cintillo y Barita',
+    nombre: 'Adornos para Pastel',
     categoria: 'decoracion',
+    productoMadre: 'Adornos para Pastel',
     precioCUP: 4200,
     imagen: 'img/cumpleanos/adornosPastel.jpg',
-    nuevo: true,
+    nuevo: false,
     agotado: false
   },
   {
@@ -41,7 +43,7 @@ PRODUCTOS.cumpleanos = [
     categoria: 'baby shower',
     precioCUP: 3000,
     imagen: 'img/cumpleanos/bannerBabySh.jpg',
-    nuevo: true,
+    nuevo: false,
     agotado: false
   },
   {
@@ -59,7 +61,7 @@ PRODUCTOS.cumpleanos = [
     categoria: 'banderines',
     productoMadre: 'Banderínes',
     precioCUP: 3500,
-    imagen: 'img/cumpleanos/banderinHappyBA.jpg',
+    imagen: 'img/cumpleanos/banderinHappyB.jpg',
     nuevo: false,
     agotado: false
   },
@@ -69,7 +71,7 @@ PRODUCTOS.cumpleanos = [
     categoria: 'baby shower',
     precioCUP: 10,
     imagen: 'img/cumpleanos/calcomaniaBabySh.jpg',
-    nuevo: true,
+    nuevo: false,
     agotado: false
   },
   {
@@ -96,7 +98,7 @@ PRODUCTOS.cumpleanos = [
     categoria: 'baby shower',
     precioCUP: 4,
     imagen: 'img/cumpleanos/globosBabySh.jpg',
-    nuevo: true,
+    nuevo: false,
     agotado: false
   },
   {
@@ -123,7 +125,7 @@ PRODUCTOS.cumpleanos = [
     categoria: 'baby shower',
     precioCUP: 1500,
     imagen: 'img/cumpleanos/lazosBabySh.jpg',
-    nuevo: true,
+    nuevo: false,
     agotado: false
   },
   {
@@ -150,7 +152,7 @@ PRODUCTOS.cumpleanos = [
     categoria: 'baby shower',
     precioCUP: 1500,
     imagen: 'img/cumpleanos/monosBabySh.jpg',
-    nuevo: true,
+    nuevo: false,
     agotado: false
   },
   {
@@ -178,7 +180,7 @@ PRODUCTOS.cumpleanos = [
     categoria: 'vasos',
     precioCUP: 2500,
     imagen: 'img/cumpleanos/vasosCumple.jpg',
-    nuevo: true,
+    nuevo: false,
     agotado: false
   },
   {
@@ -374,7 +376,8 @@ PRODUCTOS.cumpleanos = [
   {
     id: 'cum-049',
     nombre: 'Adornos para Pastel',
-    categoria: 'sets',
+    categoria: 'decoracion',
+    productoMadre: 'Adornos para Pastel',
     precioCUP: 1000,
     imagen: 'img/cumpleanos/adornoPastel.jpg',
     nuevo: false,
