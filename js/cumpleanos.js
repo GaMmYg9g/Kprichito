@@ -423,4 +423,14 @@ PRODUCTOS.cumpleanos = [
     nuevo: false,
     agotado: false
   },
+  {
+    id: 'cum-054',
+    nombre: 'Mantel',
+    categoria: 'manteles',
+    productoMadre: 'Manteles',
+    precioCUP: 3500,
+    imagen: 'img/cumpleanos/mantelNeg.jpg',
+    nuevo: false,
+    agotado: false
+  },
 ];
