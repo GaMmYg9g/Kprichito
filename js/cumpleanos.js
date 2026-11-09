@@ -258,7 +258,7 @@ PRODUCTOS.cumpleanos = [
     nombre: 'Mantel',
     categoria: 'manteles',
     productoMadre: 'Manteles',
-    precioCUP: 3500,
+    precioCUP: 1600,
     imagen: 'img/cumpleanos/mantelR.jpg',
     nuevo: false,
     agotado: false
@@ -268,7 +268,7 @@ PRODUCTOS.cumpleanos = [
     nombre: 'Mantel',
     categoria: 'manteles',
     productoMadre: 'Manteles',
-    precioCUP: 3500,
+    precioCUP: 1600,
     imagen: 'img/cumpleanos/mantelN.jpg',
     nuevo: false,
     agotado: false
@@ -278,7 +278,7 @@ PRODUCTOS.cumpleanos = [
     nombre: 'Mantel',
     categoria: 'manteles',
     productoMadre: 'Manteles',
-    precioCUP: 3500,
+    precioCUP: 1600,
     imagen: 'img/cumpleanos/mantelAm.jpg',
     nuevo: false,
     agotado: false
@@ -288,7 +288,7 @@ PRODUCTOS.cumpleanos = [
     nombre: 'Mantel',
     categoria: 'manteles',
     productoMadre: 'Manteles',
-    precioCUP: 3500,
+    precioCUP: 1600,
     imagen: 'img/cumpleanos/mantelA.jpg',
     nuevo: false,
     agotado: false
@@ -298,7 +298,7 @@ PRODUCTOS.cumpleanos = [
     nombre: 'Mantel',
     categoria: 'manteles',
     productoMadre: 'Manteles',
-    precioCUP: 3500,
+    precioCUP: 1600,
     imagen: 'img/cumpleanos/mantelM.jpg',
     nuevo: false,
     agotado: false
@@ -308,7 +308,7 @@ PRODUCTOS.cumpleanos = [
     nombre: 'Mantel',
     categoria: 'manteles',
     productoMadre: 'Manteles',
-    precioCUP: 3500,
+    precioCUP: 1600,
     imagen: 'img/cumpleanos/mantelG.jpg',
     nuevo: false,
     agotado: false
@@ -318,7 +318,7 @@ PRODUCTOS.cumpleanos = [
     nombre: 'Mantel',
     categoria: 'manteles',
     productoMadre: 'Manteles',
-    precioCUP: 3500,
+    precioCUP: 1600,
     imagen: 'img/cumpleanos/mantelV.jpg',
     nuevo: false,
     agotado: false
@@ -424,11 +424,11 @@ PRODUCTOS.cumpleanos = [
     agotado: false
   },
   {
-    id: 'cum-054',
+    id: 'cum-043',
     nombre: 'Mantel',
     categoria: 'manteles',
     productoMadre: 'Manteles',
-    precioCUP: 3500,
+    precioCUP: 1600,
     imagen: 'img/cumpleanos/mantelNeg.jpg',
     nuevo: false,
     agotado: false
