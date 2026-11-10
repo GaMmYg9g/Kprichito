@@ -1,19 +1,3 @@
-/* =====================================================
-   KPRICHITOS · Juguetes
-   -----------------------------------------------------
-   Agrega o edita productos aquí. Cada producto debe
-   estar separado por coma. No olvides la coma después
-   del último campo de cada objeto excepto el último.
-
-   Campo `categoria` (opcional):
-     · Solo para agrupar visualmente. No se muestra.
-     · Si lo omites, el producto cae en "Otros".
-
-   Campo `productoMadre` (opcional):
-     · Agrupa varios productos en un carrusel horizontal
-       con divisor. Ej: productoMadre: 'Jeeps'.
-   ===================================================== */
-
 PRODUCTOS.juguetes = [
   {
     id: 'jug-002',
@@ -537,26 +521,6 @@ PRODUCTOS.juguetes = [
     categoria: 'set',
     precioCUP: 10000,
     imagen: 'img/juguetes/frozen.jpg',
-    nuevo: false,
-    agotado: false
-  },
-  {
-    id: 'jug-076',
-    nombre: 'Muñeca',
-    categoria: 'muñecas',
-    productoMadre: 'Muñecas',
-    precioCUP: 5000,
-    imagen: 'img/juguetes/muneca.jpg',
-    nuevo: false,
-    agotado: false
-  },
-  {
-    id: 'jug-077',
-    nombre: 'Muñeca Hada',
-    categoria: 'muñecas',
-    productoMadre: 'Muñecas',
-    precioCUP: 5000,
-    imagen: 'img/juguetes/muneca2.jpg',
     nuevo: false,
     agotado: false
   },
