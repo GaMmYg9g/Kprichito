@@ -86,7 +86,7 @@ PRODUCTOS.regalos = [
     nombre: 'Ropa para Bebé',
     categoria: 'ropa',
     productoMadre: 'Ropa',
-    precioCUP: 4450,                            
+    precioCUP: 4550,                            
     imagen: 'img/regalos/monoVerdA.jpg',
     nuevo: false,
     agotado: false
@@ -127,6 +127,136 @@ PRODUCTOS.regalos = [
     productoMadre: 'Perfumes',
     precioCUP: 6000,
     imagen: 'img/regalos/perfVIP2.jpg',
+    nuevo: false,
+    agotado: false
+  },
+  {
+    id: 'reg-015',
+    nombre: 'Ropa para Bebé',
+    categoria: 'ropa',
+    productoMadre: 'Ropa',
+    precioCUP: 8000,
+    imagen: 'img/regalos/monoAmar2.jpg',
+    nuevo: false,
+    agotado: false
+  },
+  {
+    id: 'reg-016',
+    nombre: 'Ropa para Bebé',
+    categoria: 'ropa',
+    productoMadre: 'Ropa',
+    precioCUP: 8000,
+    imagen: 'img/regalos/monoAzul2.jpg',
+    nuevo: false,
+    agotado: false
+  },
+  {
+    id: 'reg-017',
+    nombre: 'Ropa para Bebé',
+    categoria: 'ropa',
+    productoMadre: 'Ropa',
+    precioCUP: 8000,
+    imagen: 'img/regalos/monoVerd2.jpg',
+    nuevo: false,
+    agotado: false
+  },
+  {
+    id: 'reg-018',
+    nombre: 'Ropa para Bebé',
+    categoria: 'ropa',
+    productoMadre: 'Ropa',
+    precioCUP: 8000,
+    imagen: 'img/regalos/monoRosa2.jpg',
+    nuevo: false,
+    agotado: false
+  },
+  {
+    id: 'reg-019',
+    nombre: 'Ropa para Bebé',
+    categoria: 'ropa',
+    productoMadre: 'Ropa',
+    precioCUP: 8000,
+    imagen: 'img/regalos/monoAmar22.jpg',
+    nuevo: false,
+    agotado: false
+  },
+  {
+    id: 'reg-020',
+    nombre: 'Ropa para Bebé',
+    categoria: 'ropa',
+    productoMadre: 'Ropa',
+    precioCUP: 4550,
+    imagen: 'img/regalos/monoRosa.jpg',
+    nuevo: false,
+    agotado: false
+  },
+  {
+    id: 'reg-021',
+    nombre: 'Ropa para Bebé',
+    categoria: 'ropa',
+    productoMadre: 'Ropa',
+    precioCUP: 4550,
+    imagen: 'img/regalos/monoAmar.jpg',
+    nuevo: false,
+    agotado: false
+  },
+  {
+    id: 'reg-022',
+    nombre: 'Ropa para Bebé',
+    categoria: 'ropa',
+    productoMadre: 'Ropa',
+    precioCUP: 4550,
+    imagen: 'img/regalos/monoGris.jpg',
+    nuevo: false,
+    agotado: false
+  },
+  {
+    id: 'reg-023',
+    nombre: 'Ropa para Bebé',
+    categoria: 'ropa',
+    productoMadre: 'Ropa',
+    precioCUP: 4550,
+    imagen: 'img/regalos/monoRosa3.jpg',
+    nuevo: false,
+    agotado: false
+  },
+  {
+    id: 'reg-024',
+    nombre: 'Ropa para Bebé',
+    categoria: 'ropa',
+    productoMadre: 'Ropa',
+    precioCUP: 4550,
+    imagen: 'img/regalos/monoAmar3.jpg',
+    nuevo: false,
+    agotado: false
+  },
+  {
+    id: 'reg-025',
+    nombre: 'Ropa para Bebé',
+    categoria: 'ropa',
+    productoMadre: 'Ropa',
+    precioCUP: 4550,
+    imagen: 'img/regalos/monoMor3.jpg',
+    nuevo: false,
+    agotado: false
+  },
+  {
+    id: 'reg-026',
+    nombre: 'Ropa para Bebé',
+    categoria: 'ropa',
+    productoMadre: 'Ropa',
+    precioCUP: 4550,
+    imagen: 'img/regalos/monoVerd3.jpg',
+    nuevo: false,
+    agotado: false
+  },
+  {
+    id: 'reg-027',
+    nombre: 'Ropa para Bebé',
+    categoria: 'ropa',
+    productoMadre: 'Ropa',
+    precioCUP: 4550,
+    imagen: 'img/regalos/monoAmar33.jpg',
     nuevo: false,
     agotado: false
   },
