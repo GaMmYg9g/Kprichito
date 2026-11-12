@@ -43,7 +43,7 @@ PRODUCTOS.juguetes = [
     precioCUP: 5000,
     imagen: 'img/juguetes/perritoPeluche.jpg',
     nuevo: false,
-    agotado: false
+    agotado: true
   },
   {
     id: 'jug-009',
@@ -82,7 +82,7 @@ PRODUCTOS.juguetes = [
     precioCUP: 19000,
     imagen: 'img/juguetes/jeepSpider.jpg',
     nuevo: false,
-    agotado: false
+    agotado: true
   },
   {
     id: 'jug-014',
@@ -92,7 +92,7 @@ PRODUCTOS.juguetes = [
     precioCUP: 19000,
     imagen: 'img/juguetes/jeepHulk.jpg',
     nuevo: false,
-    agotado: false
+    agotado: true
   },
   {
     id: 'jug-015',
@@ -102,7 +102,7 @@ PRODUCTOS.juguetes = [
     precioCUP: 19000,
     imagen: 'img/juguetes/jeepIronMan.jpg',
     nuevo: false,
-    agotado: false
+    agotado: true
   },
   {
     id: 'jug-016',
@@ -156,7 +156,7 @@ PRODUCTOS.juguetes = [
     id: 'jug-022',
     nombre: 'Set de Piezas de Lego',
     categoria: 'bloques',
-    precioCUP: 4000,
+    precioCUP: 5000,
     imagen: 'img/juguetes/legos.jpg',
     nuevo: false,
     agotado: false
@@ -322,7 +322,7 @@ PRODUCTOS.juguetes = [
     precioCUP: 1000,
     imagen: 'img/juguetes/monopoly2.jpg',
     nuevo: false,
-    agotado: false
+    agotado: true
   },
   {
     id: 'jug-049',
@@ -367,7 +367,7 @@ PRODUCTOS.juguetes = [
     id: 'jug-053',
     nombre: 'Cubo Rugby',
     categoria: 'didactico',
-    precioCUP: 1500,
+    precioCUP: 3000,
     imagen: 'img/juguetes/cuboRugby.jpg',
     nuevo: false,
     agotado: false
@@ -377,7 +377,7 @@ PRODUCTOS.juguetes = [
     nombre: 'Carro de Control Remoto. Italian Brain Rot',
     categoria: 'armas',
     productoMadre: 'Vehiculos',
-    precioCUP: 16000,
+    precioCUP: 30000,
     imagen: 'img/juguetes/italianBrainRot.jpg',
     nuevo: false,
     agotado: false
@@ -397,7 +397,7 @@ PRODUCTOS.juguetes = [
     nombre: 'Osito de Peluche',
     categoria: 'peluches',
     productoMadre: 'Peluches',
-    precioCUP: 5000,
+    precioCUP: 24000,
     imagen: 'img/juguetes/osoPelucheCorazon2.jpg',
     nuevo: false,
     agotado: false
@@ -410,14 +410,14 @@ PRODUCTOS.juguetes = [
     precioCUP: 28000,
     imagen: 'img/juguetes/scooter.jpg',
     nuevo: false,
-    agotado: false
+    agotado: true
   },
   {
     id: 'jug-058',
     nombre: 'Auto a Control Remoto Rojo',
     categoria: 'vehiculos',
     productoMadre: 'Control Remoto',
-    precioCUP: 31500,
+    precioCUP: 21000,
     imagen: 'img/juguetes/carroCR2.jpg',
     nuevo: false,
     agotado: false
@@ -437,7 +437,7 @@ PRODUCTOS.juguetes = [
     nombre: 'Jeep Todo Terreno a Control Remoto',
     categoria: 'vehiculos',
     productoMadre: 'Control Remoto',
-    precioCUP: 12600,
+    precioCUP: 16000,
     imagen: 'img/juguetes/carroCR3.jpg',
     nuevo: false,
     agotado: false
@@ -529,7 +529,7 @@ PRODUCTOS.juguetes = [
     nombre: 'Muñeca Fashion',
     categoria: 'muñecas',
     productoMadre: 'Muñecas',
-    precioCUP: 4500,
+    precioCUP: 5000,
     imagen: 'img/juguetes/muneca3.jpg',
     nuevo: false,
     agotado: false
