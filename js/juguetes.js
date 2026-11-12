@@ -427,7 +427,7 @@ PRODUCTOS.juguetes = [
     nombre: 'Auto a Control Remoto Amarillo',
     categoria: 'vehiculos',
     productoMadre: 'Control Remoto',
-    precioCUP: 31500,
+    precioCUP: 21000,
     imagen: 'img/juguetes/carroCR.jpg',
     nuevo: false,
     agotado: false
