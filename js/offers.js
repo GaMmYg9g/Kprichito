@@ -12,7 +12,7 @@ const OFERTAS = [
       id: 'of-002',
       precio: 40,
       imagen: 'img/ofertas/ofertB1.jpg',
-      nueva: true,
+      nueva: false,
       agotada: false
     }
   },
