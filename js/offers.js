@@ -4,14 +4,14 @@ const OFERTAS = [
     cara: {
       id: 'of-001',
       precio: 70,
-      imagen: 'img/ofertas/ofertC1.jpg',
+      imagen: 'img/ofertas/ofertc1.jpg',
       nueva: false,
       agotada: false
     },
     barata: {
       id: 'of-002',
       precio: 40,
-      imagen: 'img/ofertas/ofertB1.jpg',
+      imagen: 'img/ofertas/ofertb1.jpg',
       nueva: true,
       agotada: false
     }
@@ -21,14 +21,14 @@ const OFERTAS = [
     cara: {
       id: 'of-003',
       precio: 100,
-      imagen: 'img/ofertas/OfertC2.jpg',
+      imagen: 'img/ofertas/ofertc2.jpg',
       nueva: false,
       agotada: false
     },
     barata: {
       id: 'of-004',
       precio: 70,
-      imagen: 'img/ofertas/ofertB2.jpg',
+      imagen: 'img/ofertas/ofertb2.jpg',
       nueva: false,
       agotada: false
     }
@@ -38,14 +38,14 @@ const OFERTAS = [
     cara: {
       id: 'of-005',
       precio: 120,
-      imagen: 'img/ofertas/ofertC3.jpg',
+      imagen: 'img/ofertas/ofertc3.jpg',
       nueva: false,
       agotada: false
     },
     barata: {
       id: 'of-006',
       precio: 70,
-      imagen: 'img/ofertas/ofertB3.jpg',
+      imagen: 'img/ofertas/ofertb3.jpg',
       nueva: false,
       agotada: false
     }
@@ -55,14 +55,14 @@ const OFERTAS = [
     cara: {
       id: 'of-007',
       precio: 150,
-      imagen: 'img/ofertas/ofertC4.jpg',
+      imagen: 'img/ofertas/ofertc4.jpg',
       nueva: false,
       agotada: false
     },
     barata: {
       id: 'of-008',
       precio: 100,
-      imagen: 'img/ofertas/ofertB4.jpg',
+      imagen: 'img/ofertas/ofertb4.jpg',
       nueva: false,
       agotada: false
     }
@@ -72,14 +72,14 @@ const OFERTAS = [
     cara: {
       id: 'of-009',
       precio: 250,
-      imagen: 'img/ofertas/OfertC5.jpg',
+      imagen: 'img/ofertas/ofertc5.jpg',
       nueva: false,
       agotada: false
     },
     barata: {
       id: 'of-010',
       precio: 200,
-      imagen: 'img/ofertas/ofertB5.jpg',
+      imagen: 'img/ofertas/ofertb5.jpg',
       nueva: false,
       agotada: false
     }
@@ -89,14 +89,14 @@ const OFERTAS = [
     cara: {
       id: 'of-011',
       precio: 280,
-      imagen: 'img/ofertas/OfertC6.jpg',
+      imagen: 'img/ofertas/ofertc6.jpg',
       nueva: false,
       agotada: false
     },
     barata: {
       id: 'of-012',
       precio: 230,
-      imagen: 'img/ofertas/ofertB6.jpg',
+      imagen: 'img/ofertas/ofertb6.jpg',
       nueva: false,
       agotada: false
     }
@@ -106,16 +106,16 @@ const OFERTAS = [
     cara: {
       id: 'of-013',
       precio: 300,
-      imagen: 'img/ofertas/OfertC7.jpg',
+      imagen: 'img/ofertas/ofertc7.jpg',
       nueva: false,
       agotada: false
     },
     barata: {
       id: 'of-014',
       precio: 250,
-      imagen: 'img/ofertas/ofertB7.jpg',
+      imagen: 'img/ofertas/ofertb7.jpg',
       nueva: false,
       agotada: false
     }
-  },
+  }
 ];
