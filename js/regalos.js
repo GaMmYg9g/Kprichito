@@ -238,7 +238,7 @@ PRODUCTOS.regalos = [
     precioCUP: 4550,
     imagen: 'img/regalos/monoMor3.jpg',
     nuevo: false,
-    agotado: false
+    agotado: true
   },
   {
     id: 'reg-026',
