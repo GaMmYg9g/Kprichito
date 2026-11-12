@@ -118,7 +118,7 @@ PRODUCTOS.juguetes = [
     id: 'jug-017',
     nombre: 'Donut Shop. Set de Dulces de Juguete',
     categoria: 'sets',
-    precioCUP: 3000,
+    precioCUP: 5000,
     imagen: 'img/juguetes/donutShop.jpg',
     nuevo: false,
     agotado: false
@@ -128,7 +128,7 @@ PRODUCTOS.juguetes = [
     nombre: 'Arma de Juguete. ¡Apunta y Dispara!',
     categoria: 'armas',
     productoMadre: 'Pistolas de Juguete',
-    precioCUP: 3500,
+    precioCUP: 5000,
     imagen: 'img/juguetes/gun.jpg',
     nuevo: false,
     agotado: false
@@ -184,7 +184,7 @@ PRODUCTOS.juguetes = [
     nombre: 'Pistola de Juguete. Prueba tú Puntería',
     categoria: 'armas',
     productoMadre: 'Pistolas de Juguete',
-    precioCUP: 3500,
+    precioCUP: 5000,
     imagen: 'img/juguetes/shooting.jpg',
     nuevo: false,
     agotado: false
@@ -203,7 +203,7 @@ PRODUCTOS.juguetes = [
     nombre: 'Pistola de Juguete',
     categoria: 'armas',
     productoMadre: 'Pistolas de Juguete',
-    precioCUP: 3500,
+    precioCUP: 5000,
     imagen: 'img/juguetes/gun2.jpg',
     nuevo: false,
     agotado: false
@@ -270,7 +270,7 @@ PRODUCTOS.juguetes = [
     id: 'jug-041',
     nombre: 'Set Médico de Juguete',
     categoria: 'sets',
-    precioCUP: 3500,
+    precioCUP: 5000,
     imagen: 'img/juguetes/setMedico.jpg',
     nuevo: false,
     agotado: false
@@ -348,7 +348,7 @@ PRODUCTOS.juguetes = [
     nombre: 'Pistola de Balas de Gel',
     categoria: 'armas',
     productoMadre: 'Pistolas de Juguete',
-    precioCUP: 3500,
+    precioCUP: 5000,
     imagen: 'img/juguetes/shooting2.jpg',
     nuevo: false,
     agotado: false
@@ -358,7 +358,7 @@ PRODUCTOS.juguetes = [
     nombre: 'Pistola de Dardos Pegajosos',
     categoria: 'armas',
     productoMadre: 'Pistolas de Juguete',
-    precioCUP: 3500,
+    precioCUP: 5000,
     imagen: 'img/juguetes/shooting3.jpg',
     nuevo: false,
     agotado: false
@@ -456,7 +456,7 @@ PRODUCTOS.juguetes = [
     id: 'jug-063',
     nombre: 'Set Médico de Juguete',
     categoria: 'sets',
-    precioCUP: 3500,
+    precioCUP: 5000,
     imagen: 'img/juguetes/setMedico2.jpg',
     nuevo: false,
     agotado: false
@@ -474,7 +474,7 @@ PRODUCTOS.juguetes = [
     id: 'jug-067',
     nombre: 'Set de Compras de Capybara',
     categoria: 'sets',
-    precioCUP: 4160,
+    precioCUP: 5000,
     imagen: 'img/juguetes/setCompras.jpg',
     nuevo: false,
     agotado: false
@@ -492,7 +492,7 @@ PRODUCTOS.juguetes = [
     id: 'jug-072',
     nombre: 'Set de Cocina',
     categoria: 'sets',
-    precioCUP: 3500,
+    precioCUP: 5000,
     imagen: 'img/juguetes/setCocina2.jpg',
     nuevo: false,
     agotado: false
@@ -501,7 +501,7 @@ PRODUCTOS.juguetes = [
     id: 'jug-073',
     nombre: 'Set de Cocina',
     categoria: 'sets',
-    precioCUP: 3500,
+    precioCUP: 5000,
     imagen: 'img/juguetes/setCocina5.jpg',
     nuevo: false,
     agotado: false
@@ -513,7 +513,7 @@ PRODUCTOS.juguetes = [
     precioCUP: 6300,
     imagen: 'img/juguetes/setCocina6.jpg',
     nuevo: false,
-    agotado: false
+    agotado: true
   },
   {
     id: 'jug-075',
