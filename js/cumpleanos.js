@@ -32,7 +32,7 @@ PRODUCTOS.cumpleanos = [
     id: 'cum-004',
     nombre: 'Banderín de Cumpleaños',
     categoria: 'banderines',
-    precioCUP: 1600,
+    precioCUP: 2000,
     imagen: 'img/cumpleanos/banderin.jpg',
     nuevo: false,
     agotado: false
@@ -44,13 +44,13 @@ PRODUCTOS.cumpleanos = [
     precioCUP: 3000,
     imagen: 'img/cumpleanos/bannerBabySh.jpg',
     nuevo: false,
-    agotado: false
+    agotado: true
   },
   {
     id: 'cum-006',
     nombre: 'Set de Globos',
     categoria: 'globos',
-    precioCUP: 3000,
+    precioCUP: 3500,
     imagen: 'img/cumpleanos/banderinesMixtos.jpg',
     nuevo: false,
     agotado: false
@@ -78,7 +78,7 @@ PRODUCTOS.cumpleanos = [
     id: 'cum-015',
     nombre: 'Confeti Shooter',
     categoria: 'decoracion',
-    precioCUP: 2000,
+    precioCUP: 4200,
     imagen: 'img/cumpleanos/confetiShooter.jpg',
     nuevo: false,
     agotado: false
@@ -105,7 +105,7 @@ PRODUCTOS.cumpleanos = [
     id: 'cum-018',
     nombre: 'Globos de Foil',
     categoria: 'globos',
-    precioCUP: 2500,
+    precioCUP: 3500,
     imagen: 'img/cumpleanos/globosFoil.jpg',
     nuevo: false,
     agotado: false
@@ -114,7 +114,7 @@ PRODUCTOS.cumpleanos = [
     id: 'cum-019',
     nombre: 'Globos de Números. Dorados y Plateados',
     categoria: 'globos',
-    precioCUP: 1000,
+    precioCUP: 1200,
     imagen: 'img/cumpleanos/globosNum.jpg',
     nuevo: false,
     agotado: false
@@ -191,7 +191,7 @@ PRODUCTOS.cumpleanos = [
     precioCUP: 360,
     imagen: 'img/cumpleanos/velasEspeciales.jpg',
     nuevo: false,
-    agotado: false
+    agotado: true
   },
   {
     id: 'cum-032',
