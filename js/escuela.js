@@ -16,7 +16,7 @@ PRODUCTOS.escuela = [
     precioCUP: 1500,
     imagen: 'img/escuela/crayones.jpg',
     nuevo: false,
-    agotado: false
+    agotado: true
   },
   
 ];
