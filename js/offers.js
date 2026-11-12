@@ -3,14 +3,14 @@ const OFERTAS = [
     id: 'par-001',
     cara: {
       id: 'of-001',
-      precio: 15,
+      precio: 70,
       imagen: 'img/ofertas/ofertC1.jpg',
       nueva: false,
       agotada: false
     },
     barata: {
       id: 'of-002',
-      precio: 5,
+      precio: 40,
       imagen: 'img/ofertas/ofertB1.jpg',
       nueva: true,
       agotada: false
@@ -20,14 +20,14 @@ const OFERTAS = [
     id: 'par-002',
     cara: {
       id: 'of-003',
-      precio: 25,
+      precio: 100,
       imagen: 'img/ofertas/OfertC2.jpg',
       nueva: false,
       agotada: false
     },
     barata: {
       id: 'of-004',
-      precio: 8,
+      precio: 70,
       imagen: 'img/ofertas/ofertB2.jpg',
       nueva: false,
       agotada: false
@@ -37,14 +37,14 @@ const OFERTAS = [
     id: 'par-003',
     cara: {
       id: 'of-005',
-      precio: 32,
+      precio: 120,
       imagen: 'img/ofertas/ofertC3.jpg',
       nueva: false,
       agotada: false
     },
     barata: {
       id: 'of-006',
-      precio: 12,
+      precio: 70,
       imagen: 'img/ofertas/ofertB3.jpg',
       nueva: false,
       agotada: false
@@ -54,14 +54,14 @@ const OFERTAS = [
     id: 'par-004',
     cara: {
       id: 'of-007',
-      precio: 25,
+      precio: 150,
       imagen: 'img/ofertas/ofertC4.jpg',
       nueva: false,
       agotada: false
     },
     barata: {
       id: 'of-008',
-      precio: 8,
+      precio: 100,
       imagen: 'img/ofertas/ofertB4.jpg',
       nueva: false,
       agotada: false
@@ -71,14 +71,14 @@ const OFERTAS = [
     id: 'par-005',
     cara: {
       id: 'of-009',
-      precio: 25,
+      precio: 250,
       imagen: 'img/ofertas/OfertC5.jpg',
       nueva: false,
       agotada: false
     },
     barata: {
       id: 'of-010',
-      precio: 8,
+      precio: 200,
       imagen: 'img/ofertas/ofertB5.jpg',
       nueva: false,
       agotada: false
@@ -88,14 +88,14 @@ const OFERTAS = [
     id: 'par-006',
     cara: {
       id: 'of-011',
-      precio: 25,
+      precio: 280,
       imagen: 'img/ofertas/OfertC6.jpg',
       nueva: false,
       agotada: false
     },
     barata: {
       id: 'of-012',
-      precio: 8,
+      precio: 230,
       imagen: 'img/ofertas/ofertB6.jpg',
       nueva: false,
       agotada: false
@@ -105,14 +105,14 @@ const OFERTAS = [
     id: 'par-007',
     cara: {
       id: 'of-013',
-      precio: 25,
+      precio: 300,
       imagen: 'img/ofertas/OfertC7.jpg',
       nueva: false,
       agotada: false
     },
     barata: {
       id: 'of-014',
-      precio: 8,
+      precio: 250,
       imagen: 'img/ofertas/ofertB7.jpg',
       nueva: false,
       agotada: false
