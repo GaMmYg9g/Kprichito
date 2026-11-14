@@ -1,10 +1,10 @@
 /* =====================================================
-   KPRICHITOS · Lógica principal
+   Kprichito · Lógica principal
    ===================================================== */
 
 /* ---------- Configuración del negocio ---------- */
 const CONFIG = {
-  nombre:        'Kprichitos',
+  nombre:        'Kprichito',
   telefono:      '+53 53008408',
   whatsapp:      '5353008408',
   whatsappCanal: 'https://chat.whatsapp.com/JjQmI1xKxIpEnNySjFokpf',
@@ -87,7 +87,7 @@ function calcularPrecios(prod) {
   const precioCUP = Math.round(Number(prod.precioCUP) || 0);
 
   if (precioCUP === 0) {
-    console.warn(`[Kprichitos] Producto "${prod.nombre}" sin precioCUP válido.`);
+    console.warn(`[Kprichito] Producto "${prod.nombre}" sin precioCUP válido.`);
   }
 
   let finalCUP = precioCUP;
@@ -129,7 +129,7 @@ function calcularPrecios(prod) {
         if (!aplicoDescuento) tieneRebaja = true;
       } else {
         console.warn(
-          `[Kprichitos] cupFijo inválido en "${prod.nombre}": ` +
+          `[Kprichito] cupFijo inválido en "${prod.nombre}": ` +
           `$${cupFijo} debe ser menor al precio CUP ($${precioCUP}).`
         );
       }
@@ -139,7 +139,7 @@ function calcularPrecios(prod) {
 
     if (finalCUP < 0) {
       console.warn(
-        `[Kprichitos] Rebaja ignorada en "${prod.nombre}": precios negativos.`,
+        `[Kprichito] Rebaja ignorada en "${prod.nombre}": precios negativos.`,
         prod.rebaja
       );
       finalCUP = precioCUP;
@@ -149,7 +149,7 @@ function calcularPrecios(prod) {
 
     if (motivo) {
       console.warn(
-        `[Kprichitos] Rebaja ignorada en "${prod.nombre}": ${motivo}.`,
+        `[Kprichito] Rebaja ignorada en "${prod.nombre}": ${motivo}.`,
         prod.rebaja
       );
     }
