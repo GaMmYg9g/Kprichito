@@ -3,24 +3,21 @@
    ===================================================== */
 
 :root {
-  /* Paleta Navideña */
-  --rosa-dulce:   #FFCDD2; /* Rojo muy suave */
-  --rosa-pastel:  #FFEBEE; /* Fondo rosado */
-  --lila:         #C8E6C9; /* Verde menta suave */
-  --morado-suave: #81C784; /* Verde pino claro */
-  --celeste:      #E0F7FA; /* Celeste hielo */
+  --rosa-dulce:   #FFCDD2; 
+  --rosa-pastel:  #FFEBEE; 
+  --lila:         #C8E6C9; 
+  --morado-suave: #81C784; 
+  --celeste:      #E0F7FA; 
   --menta:        #A5D6A7; 
-  --crema:        #FFE082; /* Dorado estrella */
+  --crema:        #FFE082; 
   --blanco:       #FAFAFA; 
-  --gris:         #37474F; /* Gris azulado oscuro para textos */
-
-  /* Acentos */
-  --acento:       #E53935; /* Rojo Navidad */
-  --marca:        #2E7D32; /* Verde Pino */
+  --gris:         #37474F; 
+  --acento:       #E53935; 
+  --marca:        #2E7D32; 
 }
 
 /* =====================================================
-   FONDO Y AMBIENTE (Nieve sutil)
+   FONDO Y AMBIENTE
    ===================================================== */
 body::after {
   background: 
@@ -39,16 +36,17 @@ body::after {
 }
 
 /* =====================================================
-   DECORACIÓN DEL HEADER (Borde de caramelo)
+   DECORACIÓN DEL HEADER
    ===================================================== */
 .app-header {
   background: linear-gradient(135deg, rgba(255, 235, 238, 0.95), rgba(224, 247, 250, 0.95));
   border-bottom: 4px solid transparent;
   border-image: repeating-linear-gradient(45deg, #E53935, #E53935 10px, #FFFFFF 10px, #FFFFFF 20px) 30;
+  overflow: visible !important; /* Permite que el gorro del logo salga */
 }
 
 /* =====================================================
-   ELEMENTOS FLOTANTES (Nieve, Regalos, Árboles)
+   ELEMENTOS FLOTANTES
    ===================================================== */
 .app-main::before {
   content: '❄️ 🎄 🎁 🦌 ⭐ ❄️ 🎅 🎁';
@@ -70,24 +68,57 @@ body::after {
   100% { transform: translateX(-100vw) translateY(0); }
 }
 
-/* Gorro de Santa animado en el logo */
+/* =====================================================
+   EL GORRO Y LA NIEVE EN EL CUADRO DEL LOGO
+   ===================================================== */
+
+/* 1. Preparamos el cuadro blanco del logo */
 .brand-icon {
-  position: relative;
-}
-.brand-icon::after {
-  content: '🎅';
-  position: absolute;
-  top: -15px;
-  right: -10px;
-  font-size: 24px;
-  transform: rotate(15deg);
-  animation: santaBounce 2s infinite alternate ease-in-out;
-  pointer-events: none;
+  position: relative !important;
+  /* ESTO ES LA CLAVE: permitimos que el gorro sobresalga del cuadro */
+  overflow: visible !important; 
 }
 
-@keyframes santaBounce {
-  0% { transform: translateY(0) rotate(15deg); }
-  100% { transform: translateY(-4px) rotate(25deg); }
+/* 2. El Gorro Navideño (en la esquina superior derecha) */
+.brand-icon::before {
+  content: '';
+  position: absolute;
+  top: -37px !important;      /* Lo sube justo por encima del borde */
+  right: -10px !important;    /* Lo pega a la esquina derecha */
+  left: auto !important;
+  width: 40px;                /* Tamaño justo para el cuadro */
+  height: 38px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath d='M20,85 Q40,10 85,60 L80,85 L25,85 Z' fill='%23E53935'/%3E%3Crect x='15' y='80' width='75' height='20' rx='10' fill='white'/%3E%3Ccircle cx='85' cy='60' r='14' fill='white'/%3E%3C/svg%3E");
+  background-size: contain;
+  background-repeat: no-repeat;
+  z-index: 50; 
+  transform: rotate(20deg); /* Inclinación elegante */
+  transform-origin: bottom left; 
+  pointer-events: none;
+  filter: drop-shadow(0 3px 5px rgba(0,0,0,0.3));
+}
+
+/* 3. La Nieve (Forzada a quedarse dentro del cuadro) */
+.brand-icon::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(circle, #fff 1.5px, transparent 1.5px),
+    radial-gradient(circle, #fff 1px, transparent 1px);
+  background-size: 15px 15px, 20px 20px;
+  background-position: 0 0, 10px 10px;
+  animation: snowfallInside 2s linear infinite;
+  z-index: 3;
+  pointer-events: none;
+  opacity: 0.9;
+  /* Recorta la nieve a la forma redondeada del cuadro para que no se salga */
+  clip-path: inset(0 round 16px); 
+}
+
+@keyframes snowfallInside {
+  0% { background-position: 0 0, 10px 10px; }
+  100% { background-position: 0 15px, 10px 30px; }
 }
 
 /* =====================================================
@@ -100,7 +131,6 @@ body::after {
   color: transparent;
 }
 
-/* Botón Comprar estilo Regalo de Navidad */
 .btn-comprar {
   background: linear-gradient(135deg, #E53935, #B71C1C);
   box-shadow: 0 4px 12px rgba(229, 57, 53, 0.35);
@@ -111,20 +141,17 @@ body::after {
   box-shadow: 0 8px 18px rgba(229, 57, 53, 0.5);
 }
 
-/* Badge de Rebaja (Dorado) */
 .badge-rebaja {
   background: linear-gradient(135deg, #FFD54F, #FFB300);
   color: #4E342E;
   box-shadow: 0 5px 14px rgba(255, 179, 0, 0.6);
 }
 
-/* Badge de NEW (Verde Pino) */
 .badge-new {
   background: linear-gradient(135deg, #81C784, #2E7D32);
   color: #fff;
 }
 
-/* Sub-nav */
 .sub-btn.active {
   background: linear-gradient(135deg, #FFCDD2, #C8E6C9);
   border-color: #E53935;
@@ -132,7 +159,6 @@ body::after {
 }
 .sub-btn.active i { color: #2E7D32; }
 
-/* Divisor de productoMadre */
 .producto-madre-linea {
   background: linear-gradient(90deg, #E53935, rgba(229, 57, 53, 0.05));
 }
@@ -141,10 +167,8 @@ body::after {
 }
 
 /* =====================================================
-   BOTONES FLOTANTES CON FORMA DE ADORNO NAVIDEÑO 🎄
+   BOTONES FLOTANTES
    ===================================================== */
-
-/* 1. Limpiamos los fondos */
 .info-action, .info-fab {
   background: transparent !important;
   box-shadow: none !important;
@@ -155,9 +179,8 @@ body::after {
   overflow: visible !important; 
 }
 
-/* 2. El adorno de fondo (Esfera roja/verde con moño) */
 .info-action::before, .info-fab::before {
-  content: '🔴'; /* Puedes cambiarlo a '🎄' o '🎁' si prefieres */
+  content: '🔴'; 
   position: absolute;
   top: 50%;
   left: 50%;
@@ -169,13 +192,11 @@ body::after {
   transition: transform 0.3s cubic-bezier(0.34, 1.6, 0.64, 1);
 }
 
-/* Hacemos que el botón principal sea un regalo */
 .info-fab::before {
   content: '🎁';
   font-size: 72px;
 }
 
-/* 3. El ícono de FontAwesome encima */
 .info-action i, .info-fab i {
   position: relative;
   z-index: 1; 
@@ -185,7 +206,6 @@ body::after {
   transition: transform 0.3s ease;
 }
 
-/* 4. Efecto al pasar el mouse (La esfera se balancea) */
 .info-action:hover::before, 
 .info-fab:hover::before {
   transform: translate(-50%, -50%) scale(1.15) rotate(15deg);
@@ -196,7 +216,6 @@ body::after {
   transform: scale(1.1);
 }
 
-/* Ajuste de panel */
 .info-panel {
   gap: 15px;
 }
