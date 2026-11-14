@@ -83,7 +83,9 @@ img { display: block; max-width: 100%; }
 
 .hidden { display: none !important; }
 
-/* HEADER */
+/* =====================================================
+   HEADER
+   ===================================================== */
 .app-header {
   position: sticky;
   top: 0;
@@ -118,16 +120,25 @@ img { display: block; max-width: 100%; }
   gap: 10px;
 }
 
+/* =====================================================
+   LOGO / ICONO PRINCIPAL DE LA CABECERA
+   ===================================================== */
 .brand-icon {
-  width: 40px;
-  height: 40px;
+  width: 55px;         /* Un poco más grande */
+  height: 55px;
   display: grid;
   place-items: center;
-  border-radius: 14px;
-  background: linear-gradient(135deg, var(--acento), var(--marca));
-  color: #fff;
-  font-size: 18px;
+  border-radius: 16px;
+  background: #ffffff; /* Fondo blanco para que se mezcle con la imagen */
   box-shadow: 0 6px 14px rgba(232, 93, 143, 0.35);
+  overflow: hidden;
+  padding: 2px;        /* Pequeño margen interno para que no toque los bordes */
+}
+
+.brand-icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* Hace que la imagen entera quepa sin recortarse */
 }
 
 .brand-name {
@@ -232,7 +243,9 @@ img { display: block; max-width: 100%; }
   color: var(--marca);
 }
 
-/* BUSCADOR */
+/* =====================================================
+   BUSCADOR
+   ===================================================== */
 .search-wrap {
   position: relative;
   margin-top: 10px;
@@ -296,7 +309,9 @@ img { display: block; max-width: 100%; }
   transform: scale(1.08);
 }
 
-/* SUB-NAV */
+/* =====================================================
+   SUB-NAV
+   ===================================================== */
 .sub-nav {
   position: sticky;
   top: var(--header-h, 130px);
@@ -365,7 +380,9 @@ img { display: block; max-width: 100%; }
   transform: translateY(-1px);
 }
 
-/* MAIN */
+/* =====================================================
+   MAIN
+   ===================================================== */
 .app-main {
   position: relative;
   z-index: 1;
@@ -382,7 +399,9 @@ img { display: block; max-width: 100%; }
   to   { opacity: 1; transform: translateY(0); }
 }
 
-/* GRID PRODUCTOS */
+/* =====================================================
+   GRID PRODUCTOS
+   ===================================================== */
 .grid-productos {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
@@ -480,7 +499,6 @@ img { display: block; max-width: 100%; }
   min-width: 0;
 }
 
-/* Pista visual: degradado a la derecha cuando hay más */
 .producto-madre-bloque::after {
   content: '';
   position: absolute;
@@ -498,7 +516,9 @@ img { display: block; max-width: 100%; }
   opacity: 0;
 }
 
-/* CARD producto */
+/* =====================================================
+   CARD PRODUCTO
+   ===================================================== */
 .card {
   position: relative;
   background: rgba(255, 255, 255, 0.94);
@@ -555,7 +575,9 @@ img { display: block; max-width: 100%; }
   min-height: 2.6em;
 }
 
-/* PRECIOS */
+/* =====================================================
+   PRECIOS
+   ===================================================== */
 .card-precios {
   display: flex;
   flex-direction: column;
@@ -617,7 +639,9 @@ img { display: block; max-width: 100%; }
   color: #1e5b4a;
 }
 
-/* REBAJAS */
+/* =====================================================
+   REBAJAS
+   ===================================================== */
 .card-precio-line .precio-viejo {
   color: #d9534f;
   text-decoration: line-through;
@@ -771,7 +795,9 @@ img { display: block; max-width: 100%; }
   color: #7e7a85;
 }
 
-/* OFERTAS */
+/* =====================================================
+   OFERTAS
+   ===================================================== */
 .ofertas-header {
   text-align: center;
   margin-bottom: 22px;
@@ -892,7 +918,9 @@ img { display: block; max-width: 100%; }
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
 }
 
-/* FAB INFO */
+/* =====================================================
+   FAB INFO
+   ===================================================== */
 .info-wrapper {
   position: fixed;
   bottom: 22px;
@@ -954,10 +982,13 @@ img { display: block; max-width: 100%; }
 
 .info-action[data-net="instagram"] { color: #C13584; }
 .info-action[data-net="whatsapp"]  { color: #25D366; }
+.info-action[data-net="whatsapp-canal"] { color: #128C7E; }
 .info-action[data-net="maps"]      { color: #EA4335; }
 .info-action[data-net="tel"]       { color: var(--marca); }
 
-/* MODAL GENÉRICO */
+/* =====================================================
+   MODAL GENÉRICO
+   ===================================================== */
 .modal-overlay {
   position: fixed;
   inset: 0;
@@ -1054,7 +1085,7 @@ img { display: block; max-width: 100%; }
   color: #1e5b4a;
 }
 
-/* SELECTOR DE MONEDA (oculto siempre ahora, se mantiene por compatibilidad) */
+/* SELECTOR DE MONEDA */
 .moneda-selector {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -1282,11 +1313,6 @@ img { display: block; max-width: 100%; }
   letter-spacing: 0.5px;
   background: rgba(142, 107, 190, 0.12);
   color: var(--marca);
-}
-
-.cart-item-price .moneda.usd {
-  background: rgba(184, 230, 213, 0.55);
-  color: #1e5b4a;
 }
 
 .cart-item-actions {
