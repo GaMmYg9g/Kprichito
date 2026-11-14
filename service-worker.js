@@ -1,22 +1,15 @@
 /* =====================================================
    KPRICHITOS · Service Worker
-   -----------------------------------------------------
-   Estrategia:
-     · HTML, CSS, JS, JSON → NETWORK-FIRST
-     · Imágenes, fuentes, CDN → CACHE-FIRST
-     · Limpia cachés viejas automáticamente
    ===================================================== */
 
-const CACHE_NAME = 'kprichitos-cache';
+const CACHE_NAME = 'kprichitos-cache-v2'; // Subimos la versión para forzar actualización
 const CACHE_PREFIX = 'kprichitos-';
 
-/* Assets mínimos para pre-cachear al instalar */
 const PRECACHE = [
   './',
   './index.html',
   './manifest.json',
   './styles/styles.css',
-  './styles/halloween.css',
   './js/products.js',
   './js/juguetes.js',
   './js/regalos.js',
@@ -24,7 +17,10 @@ const PRECACHE = [
   './js/escuela.js',
   './js/offers.js',
   './js/app.js',
-  './icons/icon.svg',
+  
+  /* Iconos nuevos */
+  './icons/icon-192.png',
+  './icons/icon-512.png',
 
   'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css'
 ];
@@ -38,7 +34,7 @@ self.addEventListener('install', (event) => {
   );
 });
 
-/* ---------- Activación · limpia cachés viejas ---------- */
+/* ---------- Activación ---------- */
 self.addEventListener('activate', (event) => {
   event.waitUntil(
     caches.keys().then((keys) =>
@@ -71,7 +67,7 @@ self.addEventListener('fetch', (event) => {
     url.hostname.includes('fonts.gstatic.com') ||
     url.hostname.includes('cdnjs.cloudflare.com');
 
-  /* ---------- 1) App files → NETWORK-FIRST ---------- */
+  /* 1) App files → NETWORK-FIRST */
   if (esAppFile) {
     event.respondWith(
       fetch(request)
@@ -94,7 +90,7 @@ self.addEventListener('fetch', (event) => {
     return;
   }
 
-  /* ---------- 2) Assets estáticos → CACHE-FIRST ---------- */
+  /* 2) Assets estáticos → CACHE-FIRST */
   if (esAssetEstatico) {
     event.respondWith(
       caches.match(request).then((cached) => {
@@ -112,7 +108,7 @@ self.addEventListener('fetch', (event) => {
     return;
   }
 
-  /* ---------- 3) Resto ---------- */
+  /* 3) Resto */
   event.respondWith(
     caches.match(request).then((cached) => cached || fetch(request))
   );
