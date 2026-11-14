@@ -4,12 +4,15 @@
 
 /* ---------- Configuración del negocio ---------- */
 const CONFIG = {
-  nombre:    'Kprichitos',
-  telefono:  '+53 55555555',
-  whatsapp:  '5355555555',
-  instagram: 'https://instagram.com/kprichitos',
-  maps:      'https://www.google.com/maps/search/?api=1&query=Kprichitos',
-  direccion: 'Calle Ejemplo #123, Ciudad'
+  nombre:        'Kprichitos',
+  telefono:      '+53 53008408',
+  whatsapp:      '5353008408',
+  whatsappCanal: 'https://chat.whatsapp.com/JjQmI1xKxIpEnNySjFokpf',
+  
+  /* Deja vacíos estos campos si no quieres que aparezcan */
+  instagram:     'https://www.instagram.com/kprichito_oficial?rpxt=ZmRqcWxtaDl5NzA3&utm_source=qr', 
+  maps:          '',
+  direccion:     'Calle Libertad entre Maceo y H. Castillo 60B. Ciego de Ávila.' 
 };
 
 /* ---------- Estado de la app ---------- */
@@ -78,7 +81,7 @@ function renderPrecioHTML(precio, moneda) {
 }
 
 /* =====================================================
-   CÁLCULO DE PRECIOS (solo CUP)
+   CÁLCULO DE PRECIOS
    ===================================================== */
 function calcularPrecios(prod) {
   const precioCUP = Math.round(Number(prod.precioCUP) || 0);
@@ -639,7 +642,6 @@ function renderProductos(categoria) {
   });
 }
 
-/* Bloque con divisor + carrusel horizontal */
 function crearBloqueGrupo(nombreMadre, productos) {
   const wrap = document.createElement('div');
   wrap.className = 'producto-madre-bloque';
@@ -1157,15 +1159,39 @@ function configurarFAB() {
     }
   });
 
-  $('#infoPanel [data-net="instagram"]').href = CONFIG.instagram;
-  $('#infoPanel [data-net="whatsapp"]').href  = `https://wa.me/${CONFIG.whatsapp}`;
-  $('#infoPanel [data-net="tel"]').href       = `tel:${CONFIG.telefono.replace(/\s/g, '')}`;
+  // 1. Instagram (solo si hay URL)
+  const igBtn = $('#infoPanel [data-net="instagram"]');
+  if (CONFIG.instagram) {
+    igBtn.href = CONFIG.instagram;
+  } else {
+    igBtn.style.display = 'none';
+  }
 
-  $('#infoPanel [data-net="maps"]').addEventListener('click', () => {
-    panel.classList.remove('open');
-    panel.setAttribute('aria-hidden', 'true');
-    abrirDireccionModal();
-  });
+  // 2. WhatsApp normal
+  $('#infoPanel [data-net="whatsapp"]').href = `https://wa.me/${CONFIG.whatsapp}`;
+  
+  // 3. Canal de WhatsApp (solo si hay URL)
+  const canalBtn = $('#infoPanel [data-net="whatsapp-canal"]');
+  if (CONFIG.whatsappCanal) {
+    canalBtn.href = CONFIG.whatsappCanal;
+  } else {
+    canalBtn.style.display = 'none';
+  }
+
+  // 4. Teléfono
+  $('#infoPanel [data-net="tel"]').href = `tel:${CONFIG.telefono.replace(/\s/g, '')}`;
+
+  // 5. Maps / Ubicación (se oculta si no hay dirección)
+  const mapsBtn = $('#infoPanel [data-net="maps"]');
+  if (mapsBtn && CONFIG.direccion) {
+    mapsBtn.addEventListener('click', () => {
+      panel.classList.remove('open');
+      panel.setAttribute('aria-hidden', 'true');
+      abrirDireccionModal();
+    });
+  } else if (mapsBtn) {
+    mapsBtn.style.display = 'none';
+  }
 }
 
 /* =====================================================
@@ -1317,14 +1343,14 @@ document.addEventListener('DOMContentLoaded', () => {
   /* =====================================================
      TEMA HALLOWEEN (Automático en Octubre)
      ===================================================== */
-  const mesActual = new Date().getMonth(); // 0 = Enero, 9 = Octubre
+  const mesActual = new Date().getMonth();
   if (mesActual === 9) {
     const linkHalloween = document.createElement('link');
     linkHalloween.rel = 'stylesheet';
     linkHalloween.href = 'styles/halloween.css';
     document.head.appendChild(linkHalloween);
   }
-  
+
   const searchInput = $('#searchInput');
   const searchClear = $('#searchClear');
   const subNav = document.querySelector('.sub-nav');
