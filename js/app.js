@@ -1,5 +1,5 @@
 /* =====================================================
-   Kprichito · Lógica principal
+   KPRICHITO · Lógica principal
    ===================================================== */
 
 /* ---------- Configuración del negocio ---------- */
@@ -1159,7 +1159,6 @@ function configurarFAB() {
     }
   });
 
-  // 1. Instagram (solo si hay URL)
   const igBtn = $('#infoPanel [data-net="instagram"]');
   if (CONFIG.instagram) {
     igBtn.href = CONFIG.instagram;
@@ -1167,10 +1166,8 @@ function configurarFAB() {
     igBtn.style.display = 'none';
   }
 
-  // 2. WhatsApp normal
   $('#infoPanel [data-net="whatsapp"]').href = `https://wa.me/${CONFIG.whatsapp}`;
   
-  // 3. Canal de WhatsApp (solo si hay URL)
   const canalBtn = $('#infoPanel [data-net="whatsapp-canal"]');
   if (CONFIG.whatsappCanal) {
     canalBtn.href = CONFIG.whatsappCanal;
@@ -1178,10 +1175,8 @@ function configurarFAB() {
     canalBtn.style.display = 'none';
   }
 
-  // 4. Teléfono
   $('#infoPanel [data-net="tel"]').href = `tel:${CONFIG.telefono.replace(/\s/g, '')}`;
 
-  // 5. Maps / Ubicación (se oculta si no hay dirección)
   const mapsBtn = $('#infoPanel [data-net="maps"]');
   if (mapsBtn && CONFIG.direccion) {
     mapsBtn.addEventListener('click', () => {
@@ -1341,15 +1336,29 @@ function registrarSW() {
 document.addEventListener('DOMContentLoaded', () => {
   
   /* =====================================================
-     TEMA HALLOWEEN (Automático en Octubre)
+     TEMAS AUTOMÁTICOS (Halloween y Navidad)
      ===================================================== */
-  const mesActual = new Date().getMonth();
+  const hoy = new Date();
+  const mesActual = hoy.getMonth(); // 0 = Enero, 9 = Octubre, 11 = Diciembre
+  const diaActual = hoy.getDate();
+
+  // 1. HALLOWEEN (Todo Octubre)
   if (mesActual === 9) {
     const linkHalloween = document.createElement('link');
     linkHalloween.rel = 'stylesheet';
     linkHalloween.href = 'styles/halloween.css';
     document.head.appendChild(linkHalloween);
   }
+
+  // 2. NAVIDAD (Forzado para que se active ya)
+const esNavidad = true; 
+
+if (esNavidad) {
+  const linkNavidad = document.createElement('link');
+  linkNavidad.rel = 'stylesheet';
+  linkNavidad.href = 'styles/navidad.css';
+  document.head.appendChild(linkNavidad);
+}
 
   const searchInput = $('#searchInput');
   const searchClear = $('#searchClear');
