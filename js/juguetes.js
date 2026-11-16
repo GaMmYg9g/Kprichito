@@ -66,16 +66,7 @@ PRODUCTOS.juguetes = [
     agotado: false
   },
   {
-    id: 'jug-012',
-    nombre: 'Llaveros y Monederos se Stitch',
-    categoria: 'llaveros',
-    precioCUP: 1,
-    imagen: 'img/juguetes/llaveroMonederoStitch.jpg',
-    nuevo: false,
-    agotado: false
-  },
-  {
-    id: 'jug-013',
+    id: 'jug-013',figuras 
     nombre: 'Jeep Todoterreno de Spider-Man',
     categoria: 'vehiculos',
     productoMadre: 'Control Remoto',
@@ -147,7 +138,7 @@ PRODUCTOS.juguetes = [
     id: 'jug-021',
     nombre: 'Pelotas Divertidas',
     categoria: 'didacticos',
-    precioCUP: 550,
+    precioCUP: 700,
     imagen: 'img/juguetes/pelotas.jpg',
     nuevo: false,
     agotado: false
@@ -242,7 +233,7 @@ PRODUCTOS.juguetes = [
     id: 'jug-037',
     nombre: 'Set de Figuras de Acción',
     categoria: 'sets',
-    precioCUP: 4000,
+    precioCUP: 5000,
     imagen: 'img/juguetes/heroesGo.jpg',
     nuevo: false,
     agotado: false
@@ -564,4 +555,4 @@ PRODUCTOS.juguetes = [
     nuevo: false,
     agotado: false
   }
-];
+]; 
