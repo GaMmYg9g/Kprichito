@@ -163,7 +163,7 @@ PRODUCTOS.cumpleanos = [
     precioCUP: 10000,
     imagen: 'img/cumpleanos/setCumpleRM.jpg',
     nuevo: false,
-    agotado: false
+    agotado: true
   },
   {
     id: 'cum-029',
@@ -422,6 +422,6 @@ PRODUCTOS.cumpleanos = [
     precioCUP: 1600,
     imagen: 'img/cumpleanos/mantelNeg.jpg',
     nuevo: false,
-    agotado: false
+    agotado: true
   },
 ];
