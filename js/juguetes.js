@@ -66,7 +66,7 @@ PRODUCTOS.juguetes = [
     agotado: false
   },
   {
-    id: 'jug-013',figuras 
+    id: 'jug-013',
     nombre: 'Jeep Todoterreno de Spider-Man',
     categoria: 'vehiculos',
     productoMadre: 'Control Remoto',
