@@ -93,15 +93,6 @@ PRODUCTOS.cumpleanos = [
     agotado: false
   },
   {
-    id: 'cum-017',
-    nombre: 'Globos para Baby Showers',
-    categoria: 'baby shower',
-    precioCUP: 4,
-    imagen: 'img/cumpleanos/globosBabySh.jpg',
-    nuevo: false,
-    agotado: false
-  },
-  {
     id: 'cum-018',
     nombre: 'Globos de Foil',
     categoria: 'globos',
