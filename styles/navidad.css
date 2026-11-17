@@ -1,52 +1,65 @@
 /* =====================================================
-   KPRICHITO · Tema Navidad (Navidad Pastel)
+   KPRICHITO · Tema Navidad (Winter Wonderland Elegante)
    ===================================================== */
 
 :root {
-  --rosa-dulce:   #FFCDD2; 
-  --rosa-pastel:  #FFEBEE; 
-  --lila:         #C8E6C9; 
-  --morado-suave: #81C784; 
-  --celeste:      #E0F7FA; 
-  --menta:        #A5D6A7; 
-  --crema:        #FFE082; 
-  --blanco:       #FAFAFA; 
-  --gris:         #37474F; 
-  --acento:       #E53935; 
-  --marca:        #2E7D32; 
+  /* Paleta Navideña */
+  --acento:       #D32F2F; /* Rojo Santa sólido */
+  --marca:        #2E7D32; /* Verde Pino */
+  --dorado:       #FFC107; /* Estrella */
+  --fondo-nieve:  #F0F8FF; /* Azul nieve muy clarito */
 }
 
 /* =====================================================
-   FONDO Y AMBIENTE
+   FONDO Y AMBIENTE (Nieve cayendo en toda la pantalla)
    ===================================================== */
 body::after {
-  background: 
-    radial-gradient(circle at 20% 20%, rgba(255, 255, 255, 0.8) 0%, transparent 8%),
-    radial-gradient(circle at 80% 40%, rgba(255, 255, 255, 0.7) 0%, transparent 10%),
-    radial-gradient(circle at 40% 70%, rgba(255, 255, 255, 0.6) 0%, transparent 6%),
-    radial-gradient(circle at 60% 90%, rgba(255, 255, 255, 0.8) 0%, transparent 8%),
-    linear-gradient(180deg, rgba(255, 235, 238, 0.4) 0%, rgba(224, 247, 250, 0.6) 100%);
-  background-size: 100px 100px, 150px 150px, 120px 120px, 180px 180px, 100% 100%;
-  animation: snowBackground 20s linear infinite;
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  
+  /* Creamos 3 capas de nieve con diferentes tamaños + el tinte de fondo */
+  background-image: 
+    radial-gradient(circle, #fff 2.5px, transparent 2.5px),
+    radial-gradient(circle, #fff 1.5px, transparent 1.5px),
+    radial-gradient(circle, #fff 1px, transparent 1px),
+    linear-gradient(180deg, rgba(255, 235, 238, 0.5) 0%, rgba(224, 247, 250, 0.6) 100%);
+  
+  /* Tamaños: Copos grandes (120px), Medianos (80px), Pequeños (40px) */
+  background-size: 120px 120px, 80px 80px, 40px 40px, 100% 100%;
+  
+  /* La animación cae a diferentes velocidades para simular profundidad */
+  animation: snowfallFullScreen 8s linear infinite;
 }
 
-@keyframes snowBackground {
-  0% { background-position: 0px 0px, 0px 0px, 0px 0px, 0px 0px, 0 0; }
-  100% { background-position: 0px 200px, 0px 300px, 0px 240px, 0px 360px, 0 0; }
+@keyframes snowfallFullScreen {
+  0% { background-position: 0px 0px, 0px 0px, 0px 0px, 0 0; }
+  100% { background-position: 0px 120px, 0px 80px, 0px 40px, 0 0; }
 }
 
 /* =====================================================
    DECORACIÓN DEL HEADER
    ===================================================== */
 .app-header {
-  background: linear-gradient(135deg, rgba(255, 235, 238, 0.95), rgba(224, 247, 250, 0.95));
-  border-bottom: 4px solid transparent;
-  border-image: repeating-linear-gradient(45deg, #E53935, #E53935 10px, #FFFFFF 10px, #FFFFFF 20px) 30;
-  overflow: visible !important; /* Permite que el gorro del logo salga */
+  background: rgba(255, 255, 255, 0.85); 
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border-bottom: 2px solid rgba(211, 47, 47, 0.2); 
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  overflow: visible !important; 
+}
+
+.brand-name {
+  color: var(--acento); 
+  background: none;
+  -webkit-text-fill-color: initial;
+  text-shadow: 0 1px 2px rgba(211, 47, 47, 0.2);
 }
 
 /* =====================================================
-   ELEMENTOS FLOTANTES
+   ELEMENTOS FLOTANTES (Sutil)
    ===================================================== */
 .app-main::before {
   content: '❄️ 🎄 🎁 🦌 ⭐ ❄️ 🎅 🎁';
@@ -55,50 +68,45 @@ body::after {
   left: -100px;
   width: 200vw;
   font-size: 28px;
-  opacity: 0.25;
+  opacity: 0.15; 
   z-index: -1;
   pointer-events: none;
   white-space: nowrap;
-  animation: navidadFloat 35s linear infinite;
+  animation: navidadFloat 40s linear infinite;
 }
 
 @keyframes navidadFloat {
   0% { transform: translateX(0) translateY(0); }
-  50% { transform: translateX(-50vw) translateY(-30px) rotate(10deg); }
+  50% { transform: translateX(-50vw) translateY(-20px) rotate(10deg); }
   100% { transform: translateX(-100vw) translateY(0); }
 }
 
 /* =====================================================
-   EL GORRO Y LA NIEVE EN EL CUADRO DEL LOGO
+   EL GORRO Y LA NIEVE EN EL LOGO
    ===================================================== */
-
-/* 1. Preparamos el cuadro blanco del logo */
 .brand-icon {
   position: relative !important;
-  /* ESTO ES LA CLAVE: permitimos que el gorro sobresalga del cuadro */
   overflow: visible !important; 
 }
 
-/* 2. El Gorro Navideño (en la esquina superior derecha) */
 .brand-icon::before {
   content: '';
   position: absolute;
-  top: -37px !important;      /* Lo sube justo por encima del borde */
-  right: -10px !important;    /* Lo pega a la esquina derecha */
+  top: -37px !important;      
+  right: -10px !important;    
   left: auto !important;
-  width: 40px;                /* Tamaño justo para el cuadro */
+  width: 40px;                
   height: 38px;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath d='M20,85 Q40,10 85,60 L80,85 L25,85 Z' fill='%23E53935'/%3E%3Crect x='15' y='80' width='75' height='20' rx='10' fill='white'/%3E%3Ccircle cx='85' cy='60' r='14' fill='white'/%3E%3C/svg%3E");
   background-size: contain;
   background-repeat: no-repeat;
   z-index: 50; 
-  transform: rotate(20deg); /* Inclinación elegante */
+  transform: rotate(20deg);
   transform-origin: bottom left; 
   pointer-events: none;
   filter: drop-shadow(0 3px 5px rgba(0,0,0,0.3));
 }
 
-/* 3. La Nieve (Forzada a quedarse dentro del cuadro) */
 .brand-icon::after {
   content: '';
   position: absolute;
@@ -112,7 +120,6 @@ body::after {
   z-index: 3;
   pointer-events: none;
   opacity: 0.9;
-  /* Recorta la nieve a la forma redondeada del cuadro para que no se salga */
   clip-path: inset(0 round 16px); 
 }
 
@@ -122,52 +129,58 @@ body::after {
 }
 
 /* =====================================================
-   BOTONES Y TARJETAS
+   BOTONES DE NAVEGACIÓN Y TARJETAS
    ===================================================== */
-.brand-name {
-  background: linear-gradient(120deg, #E53935 0%, #2E7D32 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
+.nav-btn.active {
+  background: linear-gradient(135deg, #E53935, #C62828);
+  color: #fff;
+  box-shadow: 0 4px 12px rgba(211, 47, 47, 0.3);
 }
+
+.sub-btn.active {
+  background: #FFF;
+  border-color: var(--acento);
+  color: var(--acento);
+  box-shadow: 0 4px 10px rgba(211, 47, 47, 0.15);
+}
+.sub-btn.active i { color: var(--acento); }
 
 .btn-comprar {
   background: linear-gradient(135deg, #E53935, #B71C1C);
   box-shadow: 0 4px 12px rgba(229, 57, 53, 0.35);
-  border: 1px solid #FFCDD2;
+  border: none;
 }
 
 .btn-comprar:hover {
   box-shadow: 0 8px 18px rgba(229, 57, 53, 0.5);
+  transform: translateY(-2px);
+}
+
+.card {
+  border: 1px solid rgba(211, 47, 47, 0.1);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
 }
 
 .badge-rebaja {
-  background: linear-gradient(135deg, #FFD54F, #FFB300);
+  background: linear-gradient(135deg, var(--dorado), #FF8F00);
   color: #4E342E;
-  box-shadow: 0 5px 14px rgba(255, 179, 0, 0.6);
+  box-shadow: 0 4px 10px rgba(255, 193, 7, 0.4);
 }
 
 .badge-new {
-  background: linear-gradient(135deg, #81C784, #2E7D32);
+  background: var(--marca);
   color: #fff;
 }
 
-.sub-btn.active {
-  background: linear-gradient(135deg, #FFCDD2, #C8E6C9);
-  border-color: #E53935;
-  color: #B71C1C;
-}
-.sub-btn.active i { color: #2E7D32; }
-
 .producto-madre-linea {
-  background: linear-gradient(90deg, #E53935, rgba(229, 57, 53, 0.05));
+  background: linear-gradient(90deg, var(--acento), rgba(211, 47, 47, 0.05));
 }
 .producto-madre-nombre {
-  color: #2E7D32;
+  color: var(--marca);
 }
 
 /* =====================================================
-   BOTONES FLOTANTES
+   BOTONES FLOTANTES CON FONT AWESOME
    ===================================================== */
 .info-action, .info-fab {
   background: transparent !important;
@@ -176,25 +189,51 @@ body::after {
   position: relative;
   display: grid;
   place-items: center;
-  overflow: visible !important; 
+  overflow: hidden !important; 
 }
 
-.info-action::before, .info-fab::before {
-  content: '🔴'; 
+.info-action {
+  width: 55px !important;
+  height: 55px !important;
+}
+
+.info-action::before {
+  content: '\f06b'; 
+  font-family: 'Font Awesome 6 Free';
+  font-weight: 900;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  font-size: 62px; 
+  font-size: 55px; 
+  color: var(--acento); 
   line-height: 1;
   z-index: 0;
-  filter: drop-shadow(0 6px 12px rgba(229, 57, 53, 0.5));
+  filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.3));
   transition: transform 0.3s cubic-bezier(0.34, 1.6, 0.64, 1);
+  pointer-events: none;
+}
+
+.info-fab {
+  width: 75px !important;
+  height: 75px !important;
 }
 
 .info-fab::before {
-  content: '🎁';
-  font-size: 72px;
+  content: '\f06b'; 
+  font-family: 'Font Awesome 6 Free';
+  font-weight: 900;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 75px;
+  color: var(--acento); 
+  line-height: 1;
+  z-index: 0;
+  filter: drop-shadow(0 6px 10px rgba(0, 0, 0, 0.35));
+  transition: transform 0.3s cubic-bezier(0.34, 1.6, 0.64, 1);
+  pointer-events: none;
 }
 
 .info-action i, .info-fab i {
@@ -202,20 +241,58 @@ body::after {
   z-index: 1; 
   color: #fff !important; 
   font-size: 20px !important;
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8), 0 0 6px rgba(0, 0, 0, 0.6); 
+  filter: drop-shadow(0 2px 3px rgba(0, 0, 0, 0.8)); 
   transition: transform 0.3s ease;
+  pointer-events: none;
 }
 
-.info-action:hover::before, 
-.info-fab:hover::before {
-  transform: translate(-50%, -50%) scale(1.15) rotate(15deg);
+.info-fab i {
+  font-size: 26px !important; 
 }
 
-.info-action:hover i, 
-.info-fab:hover i {
-  transform: scale(1.1);
+@media (hover: hover) {
+  .info-action:hover::before, 
+  .info-fab:hover::before {
+    transform: translate(-50%, -50%) scale(1.1) rotate(-5deg);
+  }
+  .info-action:hover i, 
+  .info-fab:hover i {
+    transform: scale(1.1);
+  }
 }
 
 .info-panel {
   gap: 15px;
+  margin-bottom: 5px; 
+}
+
+/* =====================================================
+   NIEVE CAYENDO EN EL FONDO DEL CARRITO
+   ===================================================== */
+#cartModal.modal-overlay::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 0; /* Se queda detrás del carrito */
+  pointer-events: none; /* Permite hacer clic a través de la nieve */
+  
+  /* Dos capas de nieve para dar profundidad */
+  background-image: 
+    radial-gradient(circle, #fff 2px, transparent 2px),
+    radial-gradient(circle, #fff 1.5px, transparent 1.5px);
+  background-size: 120px 120px, 70px 70px;
+  
+  /* Animación cayendo */
+  animation: snowfallCart 6s linear infinite;
+}
+
+/* Aseguramos que la ventana del carrito quede POR ENCIMA de la nieve */
+#cartModal .modal {
+  position: relative;
+  z-index: 10;
+}
+
+@keyframes snowfallCart {
+  0% { background-position: 0px 0px, 0px 0px; }
+  100% { background-position: 0px 120px, 0px 70px; }
 }
