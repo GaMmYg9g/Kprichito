@@ -9,7 +9,6 @@
 
   <link rel="manifest" href="manifest.json" />
   
-  <!-- ICONOS PARA EL NAVEGADOR Y LA PWA -->
   <link rel="icon" type="image/png" href="icons/icon-192.png" />
   <link rel="apple-touch-icon" href="icons/icon-192.png" />
 
@@ -25,7 +24,6 @@
   <header class="app-header">
     <div class="header-top">
       <div class="brand">
-        <!-- AQUÍ ESTÁ EL CAMBIO: Reemplazamos el icono de FA por tu logo -->
         <span class="brand-icon">
           <img src="icons/icon-192.png" alt="Logo Kprichito" />
         </span>
@@ -33,9 +31,12 @@
       </div>
 
       <div class="header-actions">
-        <button id="installBtn" class="install-btn hidden" title="Instalar aplicación">
+        <!-- Botón de Instalar App (Siempre visible) -->
+        <button id="installBtn" class="install-btn" title="Instalar aplicación">
           <i class="fas fa-download"></i>
+          <span>Instalar app</span>
         </button>
+        
         <button id="cartBtn" class="cart-btn" aria-label="Ver carrito">
           <i class="fas fa-shopping-cart"></i>
           <span id="cartBadge" class="cart-badge hidden">0</span>
