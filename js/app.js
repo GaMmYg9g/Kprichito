@@ -9,9 +9,9 @@ const CONFIG = {
   whatsapp:      '5353008408',
   whatsappCanal: 'https://chat.whatsapp.com/JjQmI1xKxIpEnNySjFokpf',
   
-  /* Instagram y Mapa configurados */
+  /* Deja vacíos estos campos si no quieres que aparezcan */
   instagram:     'https://www.instagram.com/kprichito_oficial?rpxt=ZmRqcWxtaDl5NzA3&utm_source=qr', 
-  maps:          'https://www.google.com/maps/search/?api=1&query=Calle+Libertad+entre+Maceo+y+H.+Castillo+60B.+Ciego+de+Ávila',
+  maps:          '',
   direccion:     'Calle Libertad entre Maceo y H. Castillo 60B. Ciego de Ávila.' 
 };
 
