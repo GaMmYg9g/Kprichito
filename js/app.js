@@ -9,9 +9,9 @@ const CONFIG = {
   whatsapp:      '5353008408',
   whatsappCanal: 'https://chat.whatsapp.com/JjQmI1xKxIpEnNySjFokpf',
   
-  /* Deja vacíos estos campos si no quieres que aparezcan */
+  /* Instagram y Mapa configurados */
   instagram:     'https://www.instagram.com/kprichito_oficial?rpxt=ZmRqcWxtaDl5NzA3&utm_source=qr', 
-  maps:          '',
+  maps:          'https://www.google.com/maps/search/?api=1&query=Calle+Libertad+entre+Maceo+y+H.+Castillo+60B.+Ciego+de+Ávila',
   direccion:     'Calle Libertad entre Maceo y H. Castillo 60B. Ciego de Ávila.' 
 };
 
@@ -80,12 +80,8 @@ function renderPrecioHTML(precio, moneda) {
   return `$${formatoMonedaNum(precio, m)} <span class="${cls}">${m}</span>`;
 }
 
-/* =====================================================
-   CÁLCULO DE PRECIOS
-   ===================================================== */
 function calcularPrecios(prod) {
   const precioCUP = Math.round(Number(prod.precioCUP) || 0);
-
   if (precioCUP === 0) {
     console.warn(`[Kprichito] Producto "${prod.nombre}" sin precioCUP válido.`);
   }
@@ -98,7 +94,6 @@ function calcularPrecios(prod) {
     const tipo    = String(prod.rebaja.tipo || '').toLowerCase();
     const valor   = Number(prod.rebaja.valor);
     const cupFijo = Number(prod.rebaja.cupFijo);
-
     let aplicoDescuento = false;
     let motivo = '';
 
@@ -128,37 +123,27 @@ function calcularPrecios(prod) {
         finalCUP = Math.round(cupFijo);
         if (!aplicoDescuento) tieneRebaja = true;
       } else {
-        console.warn(
-          `[Kprichito] cupFijo inválido en "${prod.nombre}": ` +
-          `$${cupFijo} debe ser menor al precio CUP ($${precioCUP}).`
-        );
+        console.warn(`[Kprichito] cupFijo inválido en "${prod.nombre}": $${cupFijo} debe ser menor al precio CUP ($${precioCUP}).`);
       }
     }
 
     if (aplicoDescuento) tieneRebaja = true;
 
     if (finalCUP < 0) {
-      console.warn(
-        `[Kprichito] Rebaja ignorada en "${prod.nombre}": precios negativos.`,
-        prod.rebaja
-      );
+      console.warn(`[Kprichito] Rebaja ignorada en "${prod.nombre}": precios negativos.`, prod.rebaja);
       finalCUP = precioCUP;
       badge = null;
       tieneRebaja = false;
     }
 
     if (motivo) {
-      console.warn(
-        `[Kprichito] Rebaja ignorada en "${prod.nombre}": ${motivo}.`,
-        prod.rebaja
-      );
+      console.warn(`[Kprichito] Rebaja ignorada en "${prod.nombre}": ${motivo}.`, prod.rebaja);
     }
   }
 
   return { precioCUP, finalCUP, badge, tieneRebaja };
 }
 
-/* Crea una imagen clicable que abre el lightbox */
 function crearImagen(src, alt, esAmpliable = true) {
   const img = document.createElement('img');
   img.src = src;
@@ -203,14 +188,10 @@ function escapeHtml(str) {
   return div.innerHTML;
 }
 
-/* ---------- Fecha y hora en formato largo ---------- */
 function formatearFecha() {
   const ahora = new Date();
   const dias  = ['domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado'];
-  const meses = [
-    'enero', 'febrero', 'marzo', 'abril', 'mayo', 'junio',
-    'julio', 'agosto', 'septiembre', 'octubre', 'noviembre', 'diciembre'
-  ];
+  const meses = ['enero', 'febrero', 'marzo', 'abril', 'mayo', 'junio', 'julio', 'agosto', 'septiembre', 'octubre', 'noviembre', 'diciembre'];
   const d  = dias[ahora.getDay()];
   const n  = ahora.getDate();
   const me = meses[ahora.getMonth()];
@@ -220,24 +201,18 @@ function formatearFecha() {
   return `${d}, ${n} de ${me} de ${a} · ${hh}:${mm}`;
 }
 
-/* =====================================================
-   MENSAJE DE WHATSAPP
-   ===================================================== */
 function generarMensajePedido(items) {
   const SEP = '━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━';
-
   let msg = '';
 
   msg += `*NUEVO PEDIDO - ${CONFIG.nombre}*\n`;
   msg += `${formatearFecha()}\n`;
   msg += `${SEP}\n\n`;
-
   msg += `*DETALLE DEL PEDIDO*\n\n`;
 
   items.forEach((it, idx) => {
     const m = normalizarMoneda(it.moneda);
     const subtotal = it.precio * it.cantidad;
-
     msg += `*${idx + 1}. ${it.nombre || 'Oferta especial'}*\n`;
     msg += `   ${it.cantidad} × $${formatoMonedaNum(it.precio, m)} ${m}\n`;
     msg += `   Subtotal: $${formatoMonedaNum(subtotal, m)} ${m}\n\n`;
@@ -258,7 +233,6 @@ function generarMensajePedido(items) {
 
   const totalArticulos = items.reduce((s, i) => s + i.cantidad, 0);
   msg += `   Artículos: ${totalArticulos}\n`;
-
   msg += `\n${SEP}\n`;
   msg += ` ¡Pedido enviado!\n`;
   msg += ` Gracias por tu preferencia\n`;
@@ -268,28 +242,18 @@ function generarMensajePedido(items) {
   return msg;
 }
 
-/* =====================================================
-   ALTURA DINÁMICA DEL HEADER
-   ===================================================== */
 function ajustarAlturaHeader() {
   const header = document.querySelector('.app-header');
   if (!header) return;
-  document.documentElement.style.setProperty(
-    '--header-h',
-    header.offsetHeight + 'px'
-  );
+  document.documentElement.style.setProperty('--header-h', header.offsetHeight + 'px');
 }
 
-/* =====================================================
-   SUB-NAV · Sincronizado con el header
-   ===================================================== */
 function configurarScrollSubNav() {
   const subNav = document.querySelector('.sub-nav');
   if (!subNav) return;
 
   const UMBRAL_MOSTRAR = 80;
   const UMBRAL_OCULTAR = 150;
-
   let ticking = false;
 
   const actualizar = () => {
@@ -311,9 +275,6 @@ function configurarScrollSubNav() {
   actualizar();
 }
 
-/* =====================================================
-   SUB-NAV · Visibilidad
-   ===================================================== */
 function actualizarSubNav() {
   const subNav = document.querySelector('.sub-nav');
   const buscando = $('#searchInput').value.trim().length > 0;
@@ -325,20 +286,15 @@ function actualizarSubNav() {
   }
 }
 
-/* =====================================================
-   LIGHTBOX
-   ===================================================== */
 function abrirLightbox(src, alt) {
   const lb = $('#lightbox');
   const img = $('#lightboxImg');
-
   img.src = src;
   img.alt = alt || '';
   img.onerror = function () {
     this.onerror = null;
     this.src = PLACEHOLDER;
   };
-
   lb.classList.remove('hidden');
   lb.setAttribute('aria-hidden', 'false');
   document.body.style.overflow = 'hidden';
@@ -351,9 +307,6 @@ function cerrarLightbox() {
   document.body.style.overflow = '';
 }
 
-/* =====================================================
-   CARRITO · Persistencia
-   ===================================================== */
 let carrito = cargarCarrito();
 
 function cargarCarrito() {
@@ -465,9 +418,6 @@ function actualizarBadgeCarrito() {
   }
 }
 
-/* =====================================================
-   CARRITO · Render
-   ===================================================== */
 function renderCarrito() {
   const cont = $('#cartItems');
   const empty = $('#cartEmpty');
@@ -551,9 +501,6 @@ function renderCarrito() {
   });
 }
 
-/* =====================================================
-   CARRITO · Checkout por WhatsApp
-   ===================================================== */
 function checkoutCarrito() {
   if (!carrito.length) {
     mostrarToast('Tu carrito está vacío');
@@ -572,9 +519,6 @@ function checkoutCarrito() {
   renderCarrito();
 }
 
-/* =====================================================
-   ORDEN + AGRUPACIÓN
-   ===================================================== */
 function prepararBloques(lista) {
   const conCat = lista.map(p => ({
     ...p,
@@ -615,9 +559,6 @@ function prepararBloques(lista) {
   return bloques;
 }
 
-/* =====================================================
-   SECCIÓN PRODUCTOS
-   ===================================================== */
 function renderProductos(categoria) {
   const grid = $('#grid-productos');
   grid.innerHTML = '';
@@ -748,9 +689,6 @@ function crearCardProducto(prod, catLabel) {
   return card;
 }
 
-/* =====================================================
-   SECCIÓN OFERTAS
-   ===================================================== */
 function renderOfertas() {
   const grid = $('#grid-ofertas');
   grid.innerHTML = '';
@@ -791,9 +729,6 @@ function crearOfertaCard(item) {
   return card;
 }
 
-/* =====================================================
-   BUSCADOR INTELIGENTE
-   ===================================================== */
 function buscarTodo(query) {
   const q = normalizar(query);
   if (!q) return [];
@@ -808,17 +743,10 @@ function buscarTodo(query) {
       const calc = calcularPrecios(p);
       const blob = normalizar(
         [
-          p.nombre,
-          p.categoria || '',
-          p.productoMadre || '',
-          String(calc.precioCUP),
-          String(calc.finalCUP),
-          'cup',
-          catLabel,
-          cat,
-          calc.tieneRebaja ? 'rebaja descuento oferta' : '',
-          p.nuevo ? 'nuevo new' : '',
-          p.agotado ? 'agotado sin stock' : 'disponible'
+          p.nombre, p.categoria || '', p.productoMadre || '',
+          String(calc.precioCUP), String(calc.finalCUP), 'cup',
+          catLabel, cat, calc.tieneRebaja ? 'rebaja descuento oferta' : '',
+          p.nuevo ? 'nuevo new' : '', p.agotado ? 'agotado sin stock' : 'disponible'
         ].join(' ')
       );
 
@@ -833,9 +761,7 @@ function buscarTodo(query) {
       const blob = normalizar(
         [
           'oferta ofertas descuento especial promocion',
-          String(o.precio),
-          'usd',
-          o.nueva ? 'nuevo new' : '',
+          String(o.precio), 'usd', o.nueva ? 'nuevo new' : '',
           o.agotada ? 'agotado sin stock' : 'disponible'
         ].join(' ')
       );
@@ -918,9 +844,7 @@ function crearCardOfertaBusqueda(o) {
 
   const btn = document.createElement('button');
   btn.className = 'btn-comprar';
-  btn.innerHTML = `<i class="fas fa-tags"></i><span>${
-    o.agotada ? 'Agotado' : 'Ver oferta'
-  }</span>`;
+  btn.innerHTML = `<i class="fas fa-tags"></i><span>${o.agotada ? 'Agotado' : 'Ver oferta'}</span>`;
   if (o.agotada) {
     btn.disabled = true;
   } else {
@@ -932,7 +856,6 @@ function crearCardOfertaBusqueda(o) {
   return card;
 }
 
-/* ---------- Control de la búsqueda ---------- */
 function aplicarBusqueda(query) {
   const q = String(query).trim();
   const searchClear = $('#searchClear');
@@ -958,9 +881,6 @@ function aplicarBusqueda(query) {
   actualizarSubNav();
 }
 
-/* =====================================================
-   NAVEGACIÓN
-   ===================================================== */
 function cambiarSeccion(nombre) {
   estado.seccion = nombre;
   localStorage.setItem('kp_seccion', nombre);
@@ -989,9 +909,6 @@ function cambiarCategoria(cat) {
   renderProductos(cat);
 }
 
-/* =====================================================
-   MODAL DE PRODUCTO
-   ===================================================== */
 let compraActual = null;
 
 function abrirModal(item, esOferta = false) {
@@ -1000,13 +917,8 @@ function abrirModal(item, esOferta = false) {
   if (esProducto) {
     const calc = calcularPrecios(item);
     compraActual = {
-      id: item.id,
-      nombre: item.nombre,
-      imagen: item.imagen,
-      esOferta: false,
-      cantidad: 1,
-      moneda: 'CUP',
-      precio: calc.finalCUP
+      id: item.id, nombre: item.nombre, imagen: item.imagen,
+      esOferta: false, cantidad: 1, moneda: 'CUP', precio: calc.finalCUP
     };
 
     $('#monedaSelector').classList.add('hidden');
@@ -1015,13 +927,8 @@ function abrirModal(item, esOferta = false) {
     priceEl.innerHTML = renderPrecioHTML(calc.finalCUP, 'CUP');
   } else {
     compraActual = {
-      id: item.id,
-      nombre: 'Oferta especial',
-      imagen: item.imagen,
-      esOferta: true,
-      cantidad: 1,
-      moneda: 'USD',
-      precio: item.precio
+      id: item.id, nombre: 'Oferta especial', imagen: item.imagen,
+      esOferta: true, cantidad: 1, moneda: 'USD', precio: item.precio
     };
 
     $('#monedaSelector').classList.add('hidden');
@@ -1069,10 +976,8 @@ function enviarWhatsAppDirecto() {
   if (!compraActual) return;
 
   const item = {
-    id: compraActual.id,
-    nombre: compraActual.nombre,
-    precio: compraActual.precio,
-    moneda: normalizarMoneda(compraActual.moneda),
+    id: compraActual.id, nombre: compraActual.nombre,
+    precio: compraActual.precio, moneda: normalizarMoneda(compraActual.moneda),
     cantidad: compraActual.cantidad
   };
 
@@ -1090,10 +995,8 @@ function añadirAlCarritoDesdeModal() {
 
   agregarAlCarrito(
     {
-      id: compraActual.id,
-      nombre: compraActual.nombre,
-      precio: compraActual.precio,
-      moneda: compraActual.moneda,
+      id: compraActual.id, nombre: compraActual.nombre,
+      precio: compraActual.precio, moneda: compraActual.moneda,
       imagen: compraActual.imagen
     },
     compraActual.cantidad
@@ -1101,9 +1004,6 @@ function añadirAlCarritoDesdeModal() {
   cerrarModal();
 }
 
-/* =====================================================
-   MODAL CARRITO
-   ===================================================== */
 function abrirCarrito() {
   renderCarrito();
   const modal = $('#cartModal');
@@ -1119,13 +1019,9 @@ function cerrarCarrito() {
   document.body.style.overflow = '';
 }
 
-/* =====================================================
-   MODAL DIRECCIÓN
-   ===================================================== */
 function abrirDireccionModal() {
   $('#dirText').textContent = CONFIG.direccion;
   $('#dirMapBtn').href = CONFIG.maps;
-
   const modal = $('#direccionModal');
   modal.classList.remove('hidden');
   modal.setAttribute('aria-hidden', 'false');
@@ -1139,9 +1035,6 @@ function cerrarDireccionModal() {
   document.body.style.overflow = '';
 }
 
-/* =====================================================
-   INFO FAB
-   ===================================================== */
 function configurarFAB() {
   const btn = $('#infoBtn');
   const panel = $('#infoPanel');
@@ -1160,20 +1053,14 @@ function configurarFAB() {
   });
 
   const igBtn = $('#infoPanel [data-net="instagram"]');
-  if (CONFIG.instagram) {
-    igBtn.href = CONFIG.instagram;
-  } else {
-    igBtn.style.display = 'none';
-  }
+  if (CONFIG.instagram) igBtn.href = CONFIG.instagram;
+  else igBtn.style.display = 'none';
 
   $('#infoPanel [data-net="whatsapp"]').href = `https://wa.me/${CONFIG.whatsapp}`;
   
   const canalBtn = $('#infoPanel [data-net="whatsapp-canal"]');
-  if (CONFIG.whatsappCanal) {
-    canalBtn.href = CONFIG.whatsappCanal;
-  } else {
-    canalBtn.style.display = 'none';
-  }
+  if (CONFIG.whatsappCanal) canalBtn.href = CONFIG.whatsappCanal;
+  else canalBtn.style.display = 'none';
 
   $('#infoPanel [data-net="tel"]').href = `tel:${CONFIG.telefono.replace(/\s/g, '')}`;
 
@@ -1189,11 +1076,8 @@ function configurarFAB() {
   }
 }
 
-/* =====================================================
-   TOAST
-   ===================================================== */
 let toastTimer;
-function mostrarToast(msg) {
+function mostrarToast(msg, duration = 2400) {
   const t = $('#toast');
   t.textContent = msg;
   t.classList.remove('hidden');
@@ -1202,12 +1086,9 @@ function mostrarToast(msg) {
   toastTimer = setTimeout(() => {
     t.classList.remove('show');
     setTimeout(() => t.classList.add('hidden'), 300);
-  }, 2400);
+  }, duration);
 }
 
-/* =====================================================
-   CONFETTI SUAVE
-   ===================================================== */
 const canvasConf = document.getElementById('confetti');
 const ctxConf = canvasConf.getContext('2d');
 let particulas = [];
@@ -1231,16 +1112,12 @@ function lanzarConfeti(cantidad = 40) {
   const w = window.innerWidth;
   for (let i = 0; i < cantidad; i++) {
     particulas.push({
-      x: Math.random() * w,
-      y: -20 - Math.random() * 60,
+      x: Math.random() * w, y: -20 - Math.random() * 60,
       size: 6 + Math.random() * 8,
       color: CONFETTI_COLORS[Math.floor(Math.random() * CONFETTI_COLORS.length)],
-      rot: Math.random() * Math.PI * 2,
-      vrot: (Math.random() - 0.5) * 0.15,
-      vx: (Math.random() - 0.5) * 1.6,
-      vy: 1.4 + Math.random() * 2.2,
-      life: 1,
-      forma: Math.random() > 0.5 ? 'rect' : 'circle'
+      rot: Math.random() * Math.PI * 2, vrot: (Math.random() - 0.5) * 0.15,
+      vx: (Math.random() - 0.5) * 1.6, vy: 1.4 + Math.random() * 2.2,
+      life: 1, forma: Math.random() > 0.5 ? 'rect' : 'circle'
     });
   }
   if (!confRaf) animarConfeti();
@@ -1251,11 +1128,8 @@ function animarConfeti() {
   const h = window.innerHeight;
 
   particulas.forEach(p => {
-    p.x += p.vx;
-    p.y += p.vy;
-    p.vy += 0.035;
-    p.rot += p.vrot;
-    p.life -= 0.0035;
+    p.x += p.vx; p.y += p.vy; p.vy += 0.035;
+    p.rot += p.vrot; p.life -= 0.0035;
   });
 
   particulas = particulas.filter(p => p.y < h + 40 && p.life > 0);
@@ -1263,63 +1137,69 @@ function animarConfeti() {
   particulas.forEach(p => {
     ctxConf.save();
     ctxConf.globalAlpha = Math.max(0, Math.min(1, p.life));
-    ctxConf.translate(p.x, p.y);
-    ctxConf.rotate(p.rot);
+    ctxConf.translate(p.x, p.y); ctxConf.rotate(p.rot);
     ctxConf.fillStyle = p.color;
-
     if (p.forma === 'rect') {
       ctxConf.fillRect(-p.size / 2, -p.size / 2, p.size, p.size * 0.55);
     } else {
-      ctxConf.beginPath();
-      ctxConf.arc(0, 0, p.size / 2, 0, Math.PI * 2);
-      ctxConf.fill();
+      ctxConf.beginPath(); ctxConf.arc(0, 0, p.size / 2, 0, Math.PI * 2); ctxConf.fill();
     }
     ctxConf.restore();
   });
 
-  if (particulas.length > 0) {
-    confRaf = requestAnimationFrame(animarConfeti);
-  } else {
+  if (particulas.length > 0) confRaf = requestAnimationFrame(animarConfeti);
+  else {
     confRaf = null;
     ctxConf.clearRect(0, 0, canvasConf.width, canvasConf.height);
   }
 }
 
 /* =====================================================
-   INSTALACIÓN PWA
+   INSTALACIÓN PWA (Optimizado para Instalar Directo)
    ===================================================== */
 let deferredPrompt = null;
+
+// Capturamos la señal del navegador LO ANTES POSIBLE
+window.addEventListener('beforeinstallprompt', (e) => {
+  e.preventDefault();
+  deferredPrompt = e; // Guardamos la señal
+});
 
 function configurarInstalacion() {
   const btn = $('#installBtn');
 
-  window.addEventListener('beforeinstallprompt', (e) => {
-    e.preventDefault();
-    deferredPrompt = e;
-    btn.classList.remove('hidden');
-    setTimeout(ajustarAlturaHeader, 50);
-  });
+  // Si ya está instalada, ocultar el botón
+  if (window.matchMedia('(display-mode: standalone)').matches || window.navigator.standalone === true) {
+    btn.classList.add('hidden');
+    return;
+  }
 
   btn.addEventListener('click', async () => {
-    if (!deferredPrompt) return;
-    deferredPrompt.prompt();
-    const { outcome } = await deferredPrompt.userChoice;
-    if (outcome === 'accepted') mostrarToast('¡Aplicación instalada!');
-    deferredPrompt = null;
-    btn.classList.add('hidden');
-    setTimeout(ajustarAlturaHeader, 50);
+    if (deferredPrompt) {
+      // Lanzamos la ventana nativa de instalación
+      deferredPrompt.prompt();
+      
+      const { outcome } = await deferredPrompt.userChoice;
+      if (outcome === 'accepted') {
+        mostrarToast('¡Instalando aplicación!');
+      }
+      
+      // Limpiamos la señal porque solo se puede usar una vez
+      deferredPrompt = null;
+    } else {
+      // Mensaje mejorado con instrucciones y mayor duración (6 segundos)
+      mostrarToast('Para instalar: abre el menú de tu navegador (los 3 puntos ⋮ o el botón Compartir) y selecciona "Instalar app" o "Añadir a pantalla de inicio".', 6000);
+    }
   });
 
+  // Si se instala con éxito, ocultamos el botón
   window.addEventListener('appinstalled', () => {
     btn.classList.add('hidden');
     deferredPrompt = null;
-    setTimeout(ajustarAlturaHeader, 50);
+    mostrarToast('¡Aplicación instalada con éxito!');
   });
 }
 
-/* =====================================================
-   SERVICE WORKER
-   ===================================================== */
 function registrarSW() {
   if ('serviceWorker' in navigator) {
     window.addEventListener('load', () => {
@@ -1330,35 +1210,20 @@ function registrarSW() {
   }
 }
 
-/* =====================================================
-   INIT
-   ===================================================== */
 document.addEventListener('DOMContentLoaded', () => {
-  
-  /* =====================================================
-     TEMAS AUTOMÁTICOS (Halloween y Navidad)
-     ===================================================== */
   const hoy = new Date();
-  const mesActual = hoy.getMonth(); // 0 = Enero, 9 = Octubre, 11 = Diciembre
+  const mesActual = hoy.getMonth();
   const diaActual = hoy.getDate();
-
-  // 1. HALLOWEEN (Todo Octubre)
-  if (mesActual === 9) {
-    const linkHalloween = document.createElement('link');
-    linkHalloween.rel = 'stylesheet';
-    linkHalloween.href = 'styles/halloween.css';
-    document.head.appendChild(linkHalloween);
+  
+  // TEMA NAVIDAD (Activo en Diciembre y primeros 6 días de Enero)
+  const esNavidad = true; /* Cambia a: (mesActual === 11) || (mesActual === 0 && diaActual <= 6) cuando termine la temporada */
+  
+  if (esNavidad) {
+    const linkNavidad = document.createElement('link');
+    linkNavidad.rel = 'stylesheet';
+    linkNavidad.href = 'styles/navidad.css';
+    document.head.appendChild(linkNavidad);
   }
-
-  // 2. NAVIDAD (Forzado para que se active ya)
-const esNavidad = true; 
-
-if (esNavidad) {
-  const linkNavidad = document.createElement('link');
-  linkNavidad.rel = 'stylesheet';
-  linkNavidad.href = 'styles/navidad.css';
-  document.head.appendChild(linkNavidad);
-}
 
   const searchInput = $('#searchInput');
   const searchClear = $('#searchClear');
@@ -1420,9 +1285,7 @@ if (esNavidad) {
 
   $('#modalImg').addEventListener('click', (e) => {
     e.stopPropagation();
-    if (compraActual) {
-      abrirLightbox(compraActual.imagen, compraActual.nombre);
-    }
+    if (compraActual) abrirLightbox(compraActual.imagen, compraActual.nombre);
   });
 
   $('#cartBtn').addEventListener('click', abrirCarrito);
