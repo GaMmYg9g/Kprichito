@@ -10,8 +10,9 @@ PRODUCTOS.regalos = [
   },
   {
     id: 'reg-002',
-    nombre: 'Chupón para Bebé',
+    nombre: 'Chupete',
     categoria: 'bebes',
+    productoMadre: 'Chupetes',
     precioCUP: 1500,
     imagen: 'img/regalos/chuponBebe.jpg',
     nuevo: false,
@@ -257,6 +258,25 @@ PRODUCTOS.regalos = [
     productoMadre: 'Ropa',
     precioCUP: 4550,
     imagen: 'img/regalos/monoAmar33.jpg',
+    nuevo: false,
+    agotado: false
+  },
+  {
+    id: 'reg-028',
+    nombre: 'Chupetes',
+    categoria: 'bebes',
+    productoMadre: 'Chupetes',
+    precioCUP: 1500,
+    imagen: 'img/regalos/chupetes.jpg',
+    nuevo: false,
+    agotado: false
+  },
+  {
+    id: 'reg-029',
+    nombre: 'Champú Repelente',
+    categoria: 'champu',
+    precioCUP: 3000,
+    imagen: 'img/regalos/repPiojos.jpg',
     nuevo: false,
     agotado: false
   },
