@@ -424,4 +424,43 @@ PRODUCTOS.cumpleanos = [
     nuevo: false,
     agotado: true
   },
+  {
+    id: 'cum-054',
+    nombre: 'Adornos para Pastel',
+    categoria: 'decoracion',
+    productoMadre: 'Adornos para Pastel',
+    precioCUP: 1000,
+    imagen: 'img/cumpleanos/decoraKake.jpg',
+    nuevo: false,
+    agotado: false
+  },
+  {
+    id: 'cum-055',
+    nombre: 'Adornos para Pastel',
+    categoria: 'decoracion',
+    productoMadre: 'Adornos para Pastel',
+    precioCUP: 1000,
+    imagen: 'img/cumpleanos/decoraKake3.jpg',
+    nuevo: false,
+    agotado: false
+  },
+  {
+    id: 'cum-056',
+    nombre: 'Adornos para Pastel',
+    categoria: 'decoracion',
+    productoMadre: 'Adornos para Pastel',
+    precioCUP: 1000,
+    imagen: 'img/cumpleanos/decoraKake2.jpg',
+    nuevo: false,
+    agotado: false
+  },
+  {
+    id: 'cum-057',
+    nombre: 'Set de Cumpleaños para Chica',
+    categoria: 'decoracion',
+    precioCUP: 4000,
+    imagen: 'img/cumpleanos/setCumpleCh.jpg',
+    nuevo: false,
+    agotado: false
+  },
 ];
