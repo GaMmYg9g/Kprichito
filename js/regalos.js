@@ -280,4 +280,24 @@ PRODUCTOS.regalos = [
     nuevo: false,
     agotado: false
   },
+  {
+    id: 'reg-030',
+    nombre: 'Chevalier - Noir',
+    categoria: 'belleza',
+    productoMadre: 'Perfumes',
+    precioCUP: 6000,
+    imagen: 'img/regalos/perfChevNoir.jpg',
+    nuevo: false,
+    agotado: false
+  },
+  {
+    id: 'reg-031',
+    nombre: 'Insuperable',
+    categoria: 'belleza',
+    productoMadre: 'Perfumes',
+    precioCUP: 6000,
+    imagen: 'img/regalos/perfInsuper.jpg',
+    nuevo: false,
+    agotado: false
+  },
 ];
